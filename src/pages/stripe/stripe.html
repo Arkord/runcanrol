@@ -1,0 +1,49 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Stripe</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form name="paymentForm">
+		<ion-item>
+			<ion-label floating>Card Number</ion-label>
+			<ion-input type="text" name="cardNumber"
+				[(ngModel)]="card.number"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Card CVC</ion-label>
+			<ion-input type="text" name="cardCvc" [(ngModel)]="card.cvc"></ion-input>
+		</ion-item>
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Month</ion-label>
+						<ion-select [(ngModel)]="card.expMonth" name="expMonth">
+							<ion-option value="{{month}}" *ngFor="let month of months">{{month}}</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-col>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Year</ion-label>
+						<ion-select [(ngModel)]="card.expYear" name="expYear">
+							<ion-option value="{{year}}" *ngFor="let year of years">{{year}}</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		<ion-item>
+			<ion-label floating>Charge Amount</ion-label>
+			<ion-input type="text" name="cardAmount" [(ngModel)]="amount"></ion-input>
+		</ion-item>
+		<p>
+			<button ion-button block color="secondary" (click)="makeStripePayment()">MAKE PAYMENT</button>
+		</p>
+	</form>
+</ion-content>
