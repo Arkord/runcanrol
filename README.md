@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Ionic 3 Toolkit
 This project is a generic Ionic application with ingredients that can be part of every modern Ionic application.
 
@@ -223,6 +224,10 @@ Install [Ionic View](http://view.ionic.io/) and preview the app on your mobile d
 ## Third Party Licenses
 * [Apache License](http://www.apache.org/licenses/)
 * [MIT License](https://opensource.org/licenses/MIT)
+=======
+# RunCanRol
+Aplicación ofertas, lugares, eventos para tu mascota
+>>>>>>> beed7ad85eca72a2bede231e777ab697305bf1d4
 =======
 # RunCanRol
 Aplicación ofertas, lugares, eventos para tu mascota
