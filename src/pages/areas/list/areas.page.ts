@@ -1,9 +1,7 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { AreasService } from '../areas.service';
 import { AreaPreviewPage } from '../preview/area-preview.page';
 import { NavController } from 'ionic-angular';
-
-declare var google;
 
 @Component({
 	templateUrl: 'areas.html'
@@ -11,10 +9,9 @@ declare var google;
 export class AreasPage {
 	private nav: NavController;
 	private AreasService: AreasService;
+	tipo: string;
 	areas: any;
-
-	@ViewChild('map') mapElement: ElementRef;
-	map: any;
+	tipos: any;
 
 	constructor(AreasService: AreasService, nav: NavController) {
 		this.AreasService = AreasService;
@@ -22,25 +19,22 @@ export class AreasPage {
 		this.AreasService.all().subscribe(
 			response => this.areas = response
 		)
+		this.AreasService.tipos().subscribe(
+			response => this.tipos = response
+		)
 	}
 
-	ionViewDidLoad(){
-		this.loadMap();
+	onChange() {
+		console.log(this.tipo);
+		this.AreasService.filter(this.tipo).subscribe(
+			response => {
+				console.log(response, this.areas);
+				this.areas = response;
+			}
+		);
 	}
 
-	loadMap() {
-		let latLng = new google.maps.LatLng(-34.9290, 138.6010);
- 
-		let mapOptions = {
-		center: latLng,
-		zoom: 15,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-	
-		this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-	}
-
-	goToArea(id) {
+	goToMap(id) {
 		this.nav.push(AreaPreviewPage, {
 			id: id
 		});

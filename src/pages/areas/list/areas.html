@@ -8,9 +8,16 @@
 </ion-header>
 
 <ion-content>
+    <ion-item>
+        <ion-label>Tipo</ion-label>
+        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()">
+            <ion-option value="todas" [selected]="true">Todas</ion-option>
+            <ion-option *ngFor="let tipo of tipos" [value]="tipo.nombre">{{tipo.nombre}}</ion-option>
+        </ion-select>
+    </ion-item>
     <ion-card *ngFor="let area of areas">
         <ion-item>
-            <h2>{{area.nombre}}</h2>
+            <h1>{{area.nombre}}</h1>
             <p>{{area.descripcion}}</p>
         </ion-item>
         <ion-card-content>
@@ -19,11 +26,10 @@
                 <ion-icon name="clock"></ion-icon> {{area.horario}}
             </p>
 
-            <a (click)="goToGallery(gallery.id)">
+            <a (click)="goToMap(area.area_id)">
                 <ion-icon name="paw"></ion-icon>
                 Ver más
             </a>
         </ion-card-content>
     </ion-card>
-    <div #map class="map"></div>
 </ion-content>
