@@ -10,19 +10,20 @@
 <ion-content>
     <ion-card *ngFor="let area of areas">
         <ion-item>
-            <ion-avatar item-left>
-                <img src="{{area.teaser}}">
-            </ion-avatar>
             <h2>{{area.nombre}}</h2>
             <p>{{area.descripcion}}</p>
         </ion-item>
         <ion-card-content>
             <p>{{area.tipo}}</p>
-            <p>{{area.horario}}</p>
+            <p>
+                <ion-icon name="clock"></ion-icon> {{area.horario}}
+            </p>
+
             <a (click)="goToGallery(gallery.id)">
                 <ion-icon name="paw"></ion-icon>
                 Ver más
             </a>
         </ion-card-content>
     </ion-card>
+    <div #map class="map"></div>
 </ion-content>
