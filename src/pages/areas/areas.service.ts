@@ -13,9 +13,9 @@ export class AreasService {
 	}
 
 	all() {
-		let url = 'https://kingsware.maxapex.net/apex/runcanrol/areasg/';
+		let url = 'https://kingsware.maxapex.net/apex/runcanrol/api/areasg/';
 		return this.http.get(url)
-			.map(response => this.result = response.json().result)
+			.map(response => this.result = response.json().items)
 	}
 
 	get(area_id) {

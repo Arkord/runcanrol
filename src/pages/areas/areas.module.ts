@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 
-import { GalleryPreviewPage } from './preview/gallery-preview.page';
-import { GalleryPage } from './item/gallery.page';
-import { GalleriesPage } from './list/galleries.page';
+import { AreaPreviewPage } from './preview/area-preview.page';
+import { AreaPage } from './item/area.page';
+import { AreasPage } from './list/areas.page';
 import { AreasService } from './areas.service';
 
 @NgModule({
 	declarations: [
-		GalleriesPage,
-		GalleryPage,
-		GalleryPreviewPage
+		AreasPage,
+		AreaPage,
+		AreaPreviewPage
 	],
 	entryComponents: [
-		GalleriesPage,
-		GalleryPage,
-		GalleryPreviewPage
+		AreasPage,
+		AreaPage,
+		AreaPreviewPage
 	],
 	imports: [
 		IonicModule
 	],
 	providers: [AreasService]
 })
-export class GalleriesModule {
+export class AreasModule {
 
 }

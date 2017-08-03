@@ -3,7 +3,7 @@ import { NavParams } from 'ionic-angular';
 import { AreasService } from '../areas.service';
 
 @Component({
-	templateUrl: 'gallery.html'
+	templateUrl: 'area.html'
 })
 export class AreaPage {
 	private AreasService: AreasService;
@@ -12,15 +12,15 @@ export class AreaPage {
 	pictureIndex: any;
 	mySlideOptions: any;
 
-	constructor(GalleriesService: AreasService, navParams: NavParams) {
-		this.AreasService = GalleriesService;
+	constructor(AreasService: AreasService, navParams: NavParams) {
+		this.AreasService = AreasService;
 		this.areaId = navParams.get('areaId');
 		this.pictureIndex = navParams.get('pictureIndex');
 		this.mySlideOptions = {
 			initialSlide: this.pictureIndex
 		};
 		this.AreasService.get(this.areaId).subscribe(
-			gallery => this.pictures = gallery.pictures
+			area => this.pictures = area.pictures
 		)
 	}
 

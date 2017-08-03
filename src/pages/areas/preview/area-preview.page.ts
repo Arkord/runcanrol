@@ -5,7 +5,7 @@ import { AreaPage } from '../item/area.page';
 import _ from 'lodash';
 
 @Component({
-	templateUrl: 'gallery-preview.html'
+	templateUrl: 'area-preview.html'
 })
 export class AreaPreviewPage {
 	private nav: NavController;

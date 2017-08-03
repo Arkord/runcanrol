@@ -8,19 +8,20 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let gallery of galleries">
+    <ion-card *ngFor="let area of areas">
         <ion-item>
             <ion-avatar item-left>
-                <img src="{{gallery.teaser}}">
+                <img src="{{area.teaser}}">
             </ion-avatar>
-            <h2>{{gallery.title}}</h2>
-            <p>{{gallery.location}}</p>
+            <h2>{{area.nombre}}</h2>
+            <p>{{area.descripcion}}</p>
         </ion-item>
-        <img src="{{gallery.teaser}}">
         <ion-card-content>
+            <p>{{area.tipo}}</p>
+            <p>{{area.horario}}</p>
             <a (click)="goToGallery(gallery.id)">
-                <ion-icon name="arrow-round-forward"></ion-icon>
-                Read more
+                <ion-icon name="paw"></ion-icon>
+                Ver más
             </a>
         </ion-card-content>
     </ion-card>

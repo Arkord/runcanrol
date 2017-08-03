@@ -3,6 +3,8 @@ import { Nav } from 'ionic-angular';
 
 import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
 import { SlideBoxPage } from '../slide-box/slide-box.page';
+import { AreasPage } from '../areas/list/areas.page';
+
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
 import { EmailService } from '../../services/email.service';
@@ -86,9 +88,9 @@ export class HomePage {
 			component: SlideBoxPage
 		}, {
 			title: 'Áreas de paseo',
-			path: 'slides',
+			path: 'areas',
 			icon: 'map',
-			component: SlideBoxPage
+			component: AreasPage
 		}]];
 	}
 }
