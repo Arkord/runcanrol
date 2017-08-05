@@ -4,6 +4,7 @@ import { Nav } from 'ionic-angular';
 import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
 import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { AreasPage } from '../areas/list/areas.page';
+import { EventsPage } from '../events/events';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
@@ -83,9 +84,9 @@ export class HomePage {
 			component: SlideBoxPage
 		}, {
 			title: 'Eventos',
-			path: 'slides',
+			path: 'eventos',
 			icon: 'calendar',
-			component: SlideBoxPage
+			component: EventsPage
 		}, {
 			title: 'Áreas de paseo',
 			path: 'areas',
