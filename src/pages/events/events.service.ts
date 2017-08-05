@@ -22,14 +22,17 @@ export class EventsService {
 	}
 
 	transform(events) {
+		this.events = [];
 		for (let i = 0; i < events.length; i++) {
 			this.events.push({
 				title: events[i].nombre,
-				startTime: (moment(events[i].fecha_inicio, 'DD-MM-YY h:m:s A')),
-				endTime: moment(events[i].fecha_fin, 'DD-MM-YY h:m:s A'),
-				allDay: false
+				startTime: moment(events[i].fecha_inicio, 'DD-MM-YY h:m:s A').toDate(),
+				endTime: moment(events[i].fecha_fin, 'DD-MM-YY h:m:s A').toDate(),
+				allDay: false,
+				description: events[i].descripcion
 			});
 		}
+		console.log(this.events);
 		return this.events;
 	}
 
