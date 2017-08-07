@@ -29,7 +29,8 @@ export class EventsService {
 				startTime: moment(events[i].fecha_inicio, 'DD-MM-YY h:m:s A').toDate(),
 				endTime: moment(events[i].fecha_fin, 'DD-MM-YY h:m:s A').toDate(),
 				allDay: false,
-				description: events[i].descripcion
+				description: events[i].descripcion,
+				location: events[i].ubicacion_maps
 			});
 		}
 		console.log(this.events);
