@@ -4,7 +4,7 @@ import { Nav } from 'ionic-angular';
 import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
 import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { AreasPage } from '../areas/list/areas.page';
-import { EventsPage } from '../events/events';
+import { EventsPage } from '../events/events.page';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';

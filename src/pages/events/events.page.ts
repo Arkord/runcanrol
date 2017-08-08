@@ -1,13 +1,13 @@
 import { Component,  ElementRef } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { EventsService } from './events.service';
+import { EventsPreviewPage } from './preview/events-preview.page';
 import * as moment from 'moment';
 
 import { style } from './events.style';
 
 @Component({
-  selector: 'page-events',
-  templateUrl: 'events.html',
+  templateUrl: 'events.html'
 })
 export class EventsPage {
   private EventsService: EventsService;
@@ -25,7 +25,7 @@ export class EventsPage {
     currentDate: this.selectedDay
   }
 
-  constructor(public navCtrl: NavController, EventsService: EventsService, private alertCtrl: AlertController) {
+  constructor(public nav: NavController, EventsService: EventsService, private alertCtrl: AlertController) {
     this.EventsService = EventsService;
     this.EventsService.all().subscribe( response => this.eventSource = response )
   }
@@ -34,18 +34,23 @@ onEventSelected(event) {
   moment.locale('es');
   let start = moment(event.startTime).format('DD-MM-YYYY HH:mm');
   let end = moment(event.endTime).format('DD-MM-YYYY HH:mm');
-    
-  let alert = this.alertCtrl.create({
-    title: `<h2>${event.title}</h2>`,
-    subTitle: `
-      <p>De: ${start}</p>
-      <p id=2>A: ${end}</p>
-      <p class="nigga" id="s">${event.description}</p>
-      <div id="map"></div>
-      `,
-    buttons: ['OK']
+
+  this.nav.push(EventsPreviewPage, {
+    start: start,
+    end: end
   });
-  alert.present();
+    
+  // let alert = this.alertCtrl.create({
+  //   title: `<h2>${event.title}</h2>`,
+  //   subTitle: `
+  //     <p>De: ${start}</p>
+  //     <p id=2>A: ${end}</p>
+  //     <p class="nigga" id="s">${event.description}</p>
+  //     <div id="map"></div>
+  //     `,
+  //   buttons: ['OK']
+  // });
+  // alert.present();
   //this.loadMap(event.title, event.location);
 }
 
