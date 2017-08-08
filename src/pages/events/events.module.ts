@@ -1,4 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { IonicModule } from 'ionic-angular';
 import { IonicPageModule } from 'ionic-angular';
 import { EventsPage } from './events.page';
 import { EventsPreviewPage } from './preview/events-preview.page';
@@ -15,6 +16,7 @@ import { NgCalendarModule } from 'ionic2-calendar';
 		EventsPreviewPage
 	],
   imports: [
+    IonicModule,
     IonicPageModule.forChild(EventsPage),
     NgCalendarModule
   ],
