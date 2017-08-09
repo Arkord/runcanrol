@@ -1,8 +1,8 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { IonicPageModule } from 'ionic-angular';
-import { EventsPage } from './events.page';
+
 import { EventsPreviewPage } from './preview/events-preview.page';
+import { EventsPage } from './events.page';
 import { EventsService } from './events.service'
 import { NgCalendarModule } from 'ionic2-calendar';
 
@@ -17,7 +17,6 @@ import { NgCalendarModule } from 'ionic2-calendar';
 	],
   imports: [
     IonicModule,
-    IonicPageModule.forChild(EventsPage),
     NgCalendarModule
   ],
   providers: [
@@ -25,4 +24,6 @@ import { NgCalendarModule } from 'ionic2-calendar';
     { provide: LOCALE_ID, useValue: 'es-MX' }
   ]
 })
-export class EventsPageModule {}
+export class EventsModule {
+
+}

@@ -84,7 +84,7 @@ import { Base64Service } from '../services/base64.service';
 import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AreasModule } from '../pages/areas/areas.module';
-import { EventsPageModule } from '../pages/events/events.module';
+import { EventsModule } from '../pages/events/events.module';
 
 export function createTranslateLoader(http: Http) {
 	return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -181,7 +181,7 @@ export function createTranslateLoader(http: Http) {
 		PouchDbCrudModule,
 		OneSignalModule,
 		AreasModule,
-		EventsPageModule,
+		EventsModule,
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [

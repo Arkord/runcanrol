@@ -1,1 +1,18 @@
-<p>Hola amigos </p>
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+        <ion-title>Eventos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="data-section">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <p>{{start}}</p>
+        <p>{{end}}</p>
+    </div>
+    <div #map></div>
+</ion-content>

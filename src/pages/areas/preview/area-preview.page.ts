@@ -25,10 +25,9 @@ export class AreaPreviewPage {
 	area: any;
 	map: any;
 
-	constructor(nav: NavController, AreasService: AreasService, navParams: NavParams) {
+	constructor(AreasService: AreasService, navParams: NavParams) {
 		this.AreasService = AreasService;
 		this.areaId = navParams.get('id');
-		this.nav = nav;
 		this.pictures = [];
 		this.nombre = "";
 		this.descripcion = "";
@@ -64,14 +63,6 @@ export class AreaPreviewPage {
 			title: nombre
 		});
 
-	}
-
-	navigateToFullGalleryView(picture) {
-		let pictureIndex = _.indexOf(this.pictures, picture);
-		this.nav.push(AreaPage, {
-			galleryId: this.areaId,
-			pictureIndex: pictureIndex
-		});
 	}
 
 }
