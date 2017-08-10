@@ -65,32 +65,32 @@ export class HomePage {
 		this.tiles = [[{
 			title: 'Cuidado para tu mascota',
 			path: 'wordpress-articles',
-			icon: 'heart',
+			icon: 'care.jpg',
 			component: WordpressListPage
 		}, {
 			title: 'Clubes & Fundaciones',
 			path: 'slides',
-			icon: 'trophy',
+			icon: 'club.jpg',
 			component: SlideBoxPage
 		}, {
 			title: 'Promociones & Descuentos',
 			path: 'slides',
-			icon: 'pricetags',
+			icon: 'promo.jpg',
 			component: SlideBoxPage
 		}, {
 			title: 'Tienda y Más',
 			path: 'slides',
-			icon: 'card',
+			icon: 'shop.jpg',
 			component: SlideBoxPage
 		}, {
 			title: 'Eventos',
 			path: 'eventos',
-			icon: 'calendar',
+			icon: 'event.jpg',
 			component: EventsPage
 		}, {
 			title: 'Áreas de paseo',
 			path: 'areas',
-			icon: 'map',
+			icon: 'run.jpg',
 			component: AreasPage
 		}]];
 	}

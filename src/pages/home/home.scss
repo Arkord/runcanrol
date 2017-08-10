@@ -3,8 +3,11 @@
         white-space: normal;
         overflow: visible;
     }
+    .label-md {
+        margin: 0;
+    }
     .card-content {
-        padding: 10px 8px;
+        padding: 0;
     }
     .home-hello {
         position: relative;

@@ -30,7 +30,9 @@ export class EventsService {
 				endTime: moment(events[i].fecha_fin, 'DD-MM-YY h:m:s A').toDate(),
 				allDay: false,
 				description: events[i].descripcion,
-				location: events[i].ubicacion_maps
+				location: events[i].ubicacion_maps,
+				costo: events[i].costo,
+				tipo: events[i].tipo
 			});
 		}
 		console.log(this.events);

@@ -15,6 +15,10 @@ export class EventsPreviewPage {
     @ViewChild('map') mapElement: ElementRef;
 
     constructor(navParams: NavParams) {
+        this.title = navParams.get('title');
         this.description = navParams.get('description');
+        this.location = navParams.get('location');
+        this.start = navParams.get('start');
+        this.end = navParams.get('end');
     }
 }
