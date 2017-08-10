@@ -40,7 +40,7 @@ onEventSelected(event) {
   this.nav.push(EventsPreviewPage, {
     title: event.title,
     description: event.description,
-    localtion: event.location, 
+    location: event.location, 
     start: start,
     end: end
   });
