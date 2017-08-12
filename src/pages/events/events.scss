@@ -1,3 +1,43 @@
-page-events {
+.monthview-primary-with-event[_ngcontent-c1] {
+    background-color: #27aae1 !important;
+}
 
+.monthview-selected[_ngcontent-c1] {
+    background-color: #f1572f !important;
+}
+
+.table-bordered[_ngcontent-c1]>thead[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table-bordered[_ngcontent-c1]>tbody[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table-bordered[_ngcontent-c1]>tfoot[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table-bordered[_ngcontent-c1]>thead[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1],
+.table-bordered[_ngcontent-c1]>tbody[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1],
+.table-bordered[_ngcontent-c1]>tfoot[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1] {
+    border: 1px solid transparent !important;
+}
+
+.table[_ngcontent-c1]>thead[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table[_ngcontent-c1]>tbody[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table[_ngcontent-c1]>tfoot[_ngcontent-c1]>tr[_ngcontent-c1]>th[_ngcontent-c1],
+.table[_ngcontent-c1]>thead[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1],
+.table[_ngcontent-c1]>tbody[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1],
+.table[_ngcontent-c1]>tfoot[_ngcontent-c1]>tr[_ngcontent-c1]>td[_ngcontent-c1] {
+    padding: 10px 0 !important;
+    line-height: 25px !important;
+    vertical-align: top !important;
+}
+
+.no-events-label[_ngcontent-c0] {
+    color: white !important;
+}
+
+.text-muted[_ngcontent-c1] {
+    color: #3f0067 !important;
+}
+
+.event-detail-container[_ngcontent-c0] {
+    border-top: 2px transparent solid;
+}
+
+.monthview-current[_ngcontent-c1] {
+    background-color: #61188c !important;
 }
