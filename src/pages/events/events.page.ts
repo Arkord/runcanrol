@@ -32,8 +32,8 @@ export class EventsPage {
 
 onEventSelected(event) {
   moment.locale('es');
-  let start = moment(event.startTime).format('DD-MM-YYYY HH:mm');
-  let end = moment(event.endTime).format('DD-MM-YYYY HH:mm');
+  let start = moment(event.startTime).format('DD MMMM YYYY, HH:mm a');
+  let end = moment(event.endTime).format('DD MMMM YYYY, HH:mm a');
 
   console.log(event);
 
@@ -42,7 +42,9 @@ onEventSelected(event) {
     description: event.description,
     location: event.location, 
     start: start,
-    end: end
+    end: end,
+    cost: event.costo,
+    type: event.tipo
   });
     
   // let alert = this.alertCtrl.create({

@@ -14,6 +14,8 @@ export class EventsPreviewPage {
     location: string;
     start: string;
     end: string;
+    cost: string;
+    type: string
 
     @ViewChild('map') mapElement: ElementRef;
     map: any;
@@ -24,6 +26,8 @@ export class EventsPreviewPage {
         this.location = navParams.get('location');
         this.start = navParams.get('start');
         this.end = navParams.get('end');
+        this.cost = navParams.get('cost');
+        this.type = navParams.get('type');
     }
 
     ionViewDidLoad(){
