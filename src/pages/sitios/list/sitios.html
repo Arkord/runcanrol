@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+        <ion-title>Cuidados para tu mascota</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Tipo</ion-label>
+        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()">
+            <ion-option value="5" [selected]="true">Todos</ion-option>
+            <ion-option *ngFor="let tipo of tipos" [value]="tipo.id">{{tipo.description}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-card *ngFor="let sitio of sitios">
+        <ion-item>
+            <h1>{{sitio.nombre}}</h1>
+            <p>{{sitio.descripcion}}</p>
+        </ion-item>
+        <ion-card-content>
+            <ion-grid class="ui-runcanrol">
+                <ion-row>
+                    <ion-col col-12>
+                        <p>
+                            <ion-icon name="pin"></ion-icon> {{sitio.domicilio}}
+                        </p>
+                        <p>
+                            <ion-icon name="phone-portrait"></ion-icon> {{sitio.telefono}} / {{sitio.celular}}
+                        </p>
+                        <p>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p class="special">Web</p>
+                        <p class="tiny"> {{sitio.web}}</p>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p class="special">Contacto</p>
+                        <p class="tiny"> {{sitio.contacto}}</p>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p class="special">Social</p>
+                        <p class="tiny"> {{sitio.facebook}}</p>
+                        <p class="tiny"> {{sitio.youtube}}</p>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p class="special">Zona</p>
+                        <p class="tiny"> {{sitio.zona}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

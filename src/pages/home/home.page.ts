@@ -5,6 +5,7 @@ import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
 import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { AreasPage } from '../areas/list/areas.page';
 import { EventsPage } from '../events/events.page';
+import { SitiosPage } from '../sitios/list/sitios.page';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
@@ -64,9 +65,9 @@ export class HomePage {
 	private initTiles(): void {
 		this.tiles = [[{
 			title: 'Cuidado para tu mascota',
-			path: 'wordpress-articles',
+			path: 'sitios',
 			icon: 'care.jpg',
-			component: WordpressListPage
+			component: SitiosPage
 		}, {
 			title: 'Clubes & Fundaciones',
 			path: 'slides',

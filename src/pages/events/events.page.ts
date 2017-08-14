@@ -47,18 +47,6 @@ onEventSelected(event) {
     type: event.tipo
   });
     
-  // let alert = this.alertCtrl.create({
-  //   title: `<h2>${event.title}</h2>`,
-  //   subTitle: `
-  //     <p>De: ${start}</p>
-  //     <p id=2>A: ${end}</p>
-  //     <p class="nigga" id="s">${event.description}</p>
-  //     <div id="map"></div>
-  //     `,
-  //   buttons: ['OK']
-  // });
-  // alert.present();
-  //this.loadMap(event.title, event.location);
 }
 
 

@@ -85,6 +85,7 @@ import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AreasModule } from '../pages/areas/areas.module';
 import { EventsModule } from '../pages/events/events.module';
+import { SitiosModule } from '../pages/sitios/sitios.module';
 
 export function createTranslateLoader(http: Http) {
 	return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -182,6 +183,7 @@ export function createTranslateLoader(http: Http) {
 		OneSignalModule,
 		AreasModule,
 		EventsModule,
+		SitiosModule
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [

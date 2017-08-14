@@ -25,12 +25,12 @@ ion-content {
     .map,
     .highlight {
         width: 100%;
-        height: 50%;
+        height: 48%;
     }
     .details,
     .description {
         width: 100%;
-        height: 25%;
+        height: 26%;
     }
     .details {
         background: #f1572f;
@@ -46,11 +46,24 @@ ion-content {
         hr {
             background-color: #ffffff;
         }
+        .no-padding {
+            padding: 0;
+        }
     }
     .description {
         background: #5e1d88;
         padding: 8px;
         font-size: 1.1em;
+    }
+}
+
+ion-card-content {
+    .special {
+        color: #64258d;
+        font-weight: bold;
+    }
+    .tiny {
+        font-size: 1rem;
     }
 }
 
