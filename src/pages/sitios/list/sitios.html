@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
-        <ion-label>Tipo</ion-label>
-        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()">
-            <ion-option value="5" [selected]="true">Todos</ion-option>
-            <ion-option *ngFor="let tipo of tipos" [value]="tipo.id">{{tipo.description}}</ion-option>
+    <ion-item class="filter">
+        <ion-label>Zona</ion-label>
+        <ion-select [(ngModel)]="zona" (ionChange)="onChange()">
+            <ion-option value="todas" [selected]="true">Todas</ion-option>
+            <ion-option *ngFor="let zona of zonas" [value]="zona.nombre">{{zona.nombre}}</ion-option>
         </ion-select>
     </ion-item>
     <ion-card *ngFor="let sitio of sitios">

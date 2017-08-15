@@ -12,6 +12,8 @@ export class SitiosPage {
 	tipo: string;
 	sitios: any;
 	tipos: any;
+	zona: string;
+	zonas: any;
 
 	constructor(SitiosService: SitiosService, nav: NavController) {
 		this.SitiosService = SitiosService;
@@ -19,18 +21,21 @@ export class SitiosPage {
 		this.SitiosService.all().subscribe(
 			response => this.sitios = response
 		)
-		this.tipos = this.SitiosService.getTipos();
+		this.SitiosService.getZonas().subscribe(
+			response => this.zonas = response
+		)
+		
 	}
 
 	onChange() {
 		console.log(this.tipo);
-		if(this.tipo == '5') {
+		if(this.zona == '0') {
 			this.SitiosService.all().subscribe(
 				response => this.sitios = response
 			)
 		}
 		else {
-			this.SitiosService.byType(this.tipo).subscribe(
+			this.SitiosService.filter(this.zona).subscribe(
 				response => this.sitios = response
 			)
 		}
