@@ -6,8 +6,8 @@ import { Config } from '../../config';
 	templateUrl: 'paypal.html'
 })
 export class PayPalPage {
-	payment: PayPalPayment = new PayPalPayment('10.10', 'USD', 'TV', 'sale');
-	currencies = ['EUR', 'USD'];
+	payment: PayPalPayment = new PayPalPayment('10.10', 'MXN', 'Correa doble para perro', 'sale');
+	currencies = ['MXN','EUR', 'USD'];
 
 	constructor(private payPal: PayPal) {
 	}

@@ -6,6 +6,7 @@ import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { AreasPage } from '../areas/list/areas.page';
 import { EventsPage } from '../events/events.page';
 import { SitiosPage } from '../sitios/list/sitios.page';
+import { ProductsListPage } from '../products/list/products.list.page';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
@@ -80,9 +81,9 @@ export class HomePage {
 			component: SlideBoxPage
 		}, {
 			title: 'Tienda y Más',
-			path: 'slides',
+			path: 'productos',
 			icon: 'shop.jpg',
-			component: SlideBoxPage
+			component: ProductsListPage
 		}, {
 			title: 'Eventos',
 			path: 'eventos',
