@@ -2,7 +2,7 @@
 Aplicación ofertas, lugares, eventos para tu mascota
 
 ## API
-URL https://kingsware.maxapex.net/apex/runcanrol/
+URL http://200.57.8.124/ords/runcanrol/
 
 ### area/{id}
 nombre,

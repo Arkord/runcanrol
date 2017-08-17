@@ -16,7 +16,7 @@ export class EventsService {
 	}
 
 	all() {
-		let url = 'https://kingsware.maxapex.net/apex/runcanrol/api/eventosg/';
+		let url = 'http://200.57.8.124/ords/runcanrol/api/eventosg/';
 		return this.http.get(url)
 			.map(response =>  this.transform(response.json().items))
 	}

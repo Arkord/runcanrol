@@ -16,19 +16,19 @@ export class SitiosService {
 	}
 
 	all() {
-		let url = 'https://kingsware.maxapex.net/apex/runcanrol/api/sitiosg/';
+		let url = 'http://200.57.8.124/ords/runcanrol/api/sitiosg/';
 		return this.http.get(url)
 			.map(response => this.result = response.json().items);
 	}
 
 	byType(type) {
-		let url = 'https://kingsware.maxapex.net/apex/runcanrol/api/sitiosp/' + type;
+		let url = 'http://200.57.8.124/ords/runcanrol/api/sitiosp/' + type;
 		return this.http.get(url)
 			.map(response => this.result = response.json().items);
 	}
 
 	getZonas() {
-		let url = 'https://kingsware.maxapex.net/apex/runcanrol/api/zonas/';
+		let url = 'http://200.57.8.124/ords/runcanrol/api/zonas/';
 		return this.http.get(url)
 			.map(response => this.resultZonas = response.json().items);
 	}
