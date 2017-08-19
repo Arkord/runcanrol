@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 
-import { SitiosPage } from './list/sitios.page';
-import { SitiosService } from './sitios.service';
+import { ClubsPage } from './list/club.page';
+import { ClubsService } from './clubs.service';
 
 @NgModule({
 	declarations: [
-		SitiosPage
+		ClubsPage
 	],
 	entryComponents: [
-		SitiosPage
+		ClubsPage
 	],
 	imports: [
 		IonicModule
 	],
-	providers: [SitiosService]
+	providers: [ClubsService]
 })
-export class SitiosModule {
+export class ClubsModule {
 
 }

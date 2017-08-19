@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SitiosService } from '../sitios.service';
-import { SitioPreviewPage } from '../preview/sitio-preview.page';
 import { NavController } from 'ionic-angular';
 
 @Component({

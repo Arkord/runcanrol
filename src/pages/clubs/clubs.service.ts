@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
-import { SITIOS } from './tipos-sitios';
+import { CLUBS } from './tipos-clubs';
 
 @Injectable()
-export class SitiosService {
+export class ClubsService {
 	private http: Http;
 	private result: any;
 	private resultZonas: any;
@@ -34,7 +34,7 @@ export class SitiosService {
 	}
 
 	getTipos() {
-		return SITIOS;
+		return CLUBS;
 	}
 
 	filter(zona) {
