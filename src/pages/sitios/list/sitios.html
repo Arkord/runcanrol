@@ -3,14 +3,14 @@
         <button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-        <ion-title>Cuidados para tu mascota</ion-title>
+        <ion-title>Cuidados</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
     <ion-item class="filter">
         <ion-label>Zona</ion-label>
-        <ion-select [(ngModel)]="zona" (ionChange)="onChange()">
+        <ion-select [(ngModel)]="zona" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
             <ion-option value="todas" [selected]="true">Todas</ion-option>
             <ion-option *ngFor="let zona of zonas" [value]="zona.nombre">{{zona.nombre}}</ion-option>
         </ion-select>

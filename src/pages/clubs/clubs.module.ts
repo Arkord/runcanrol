@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 
-import { ClubsPage } from './list/club.page';
+import { ClubsPage } from './list/clubs.page';
 import { ClubsService } from './clubs.service';
 
 @NgModule({

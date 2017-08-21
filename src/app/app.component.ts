@@ -10,7 +10,6 @@ import { DrupalListPage } from '../pages/drupal/list/drupal.list.page';
 import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 import { YoutubeListPage } from '../pages/youtube/list/youtube.list.page';
 import { VimeoListPage } from '../pages/vimeo/list/vimeo.list.page';
-import { NewsListPage } from '../pages/news/list/news.list.page';
 import { ProductsListPage } from '../pages/products/list/products.list.page';
 import { LocalStorageListPage } from '../pages/local-storage/list/local-storage.list.page';
 import { SqliteListPage } from '../pages/sqlite/list/sqlite.list.page';
@@ -113,7 +112,6 @@ export class MyApp {
 			{ title: 'Drupal', component: DrupalListPage, icon: 'water' },
 			{ title: 'Galleries', component: GalleriesPage, icon: 'images' },
 			// { title: 'Google maps', component: GoogleMapsPage, icon: 'map' },
-			{ title: 'News', component: NewsListPage, icon: 'paper' },
 			{ title: 'OAuth', component: OAuthProvidersListPage, icon: 'log-in' },
 			{ title: 'Products', component: ProductsListPage, icon: 'archive' },
 			{ title: 'RSS Feeds', component: RSSFeedsPage, icon: 'logo-rss' },

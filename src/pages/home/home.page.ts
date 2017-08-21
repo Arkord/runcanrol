@@ -6,6 +6,7 @@ import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { AreasPage } from '../areas/list/areas.page';
 import { EventsPage } from '../events/events.page';
 import { SitiosPage } from '../sitios/list/sitios.page';
+import { ClubsPage } from '../clubs/list/clubs.page';
 import { ProductsListPage } from '../products/list/products.list.page';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
@@ -14,13 +15,14 @@ import { EmailService } from '../../services/email.service';
 import { CallService } from '../../services/call.service';
 import { MapsService } from '../../services/maps.service';
 import { InAppBrowserService } from '../../services/in-app-browser.service';
-import { data } from './home-data';
+import { SLIDES } from './home-data';
 
 @Component({
 	templateUrl: 'home.html'
 })
 export class HomePage {
 	public tiles: Tile[][];
+	public slides: any;
 
 	private emailService: EmailService;
 	private callService: CallService;
@@ -41,26 +43,11 @@ export class HomePage {
 		this.browserService = browserService;
 		this.nav = nav;
 		this.initTiles();
+		this.slides = SLIDES;
 	}
 
 	public navigateTo(tile) {
 		this.nav.setRoot(tile.component);
-	}
-
-	public getDirections() {
-		this.mapsService.openMapsApp(data.officeLocation);
-	}
-
-	public sendEmail() {
-		this.emailService.sendEmail(data.email);
-	}
-
-	public openFacebookPage() {
-		this.browserService.open(data.facebook);
-	}
-
-	public callUs() {
-		this.callService.call(data.phoneNumber);
 	}
 
 	private initTiles(): void {
@@ -73,7 +60,7 @@ export class HomePage {
 			title: 'Clubes & Fundaciones',
 			path: 'slides',
 			icon: 'club.jpg',
-			component: SlideBoxPage
+			component: ClubsPage
 		}, {
 			title: 'Promociones & Descuentos',
 			path: 'slides',

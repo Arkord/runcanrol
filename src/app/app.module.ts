@@ -51,7 +51,6 @@ import { LocalNotificationsModule } from '../pages/local-notifications/local-not
 import { LocalStorageModule } from '../pages/local-storage/local-storage.module';
 import { NativeStorageModule } from '../pages/native-storage/native-storage.module';
 import { NetworkModule } from '../pages/network/network.module';
-import { NewsModule } from '../pages/news/news.module';
 import { OAuthModule } from '../pages/oauth/oauth.module';
 import { OneSignalModule } from '../pages/one-signal/one-signal.module';
 import { PayPalModule } from '../pages/paypal/paypal.module';
@@ -86,6 +85,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AreasModule } from '../pages/areas/areas.module';
 import { EventsModule } from '../pages/events/events.module';
 import { SitiosModule } from '../pages/sitios/sitios.module';
+import { ClubsModule } from '../pages/clubs/clubs.module';
 
 export function createTranslateLoader(http: Http) {
 	return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -118,7 +118,6 @@ export function createTranslateLoader(http: Http) {
 		BadgeModule,
 		BadgedTabsModule,
 		GoogleAnalyticsModule,
-		NewsModule,
 		BarcodeScannerModule,
 		BrightnessModule,
 		CalendarModule,
@@ -183,7 +182,8 @@ export function createTranslateLoader(http: Http) {
 		OneSignalModule,
 		AreasModule,
 		EventsModule,
-		SitiosModule
+		SitiosModule,
+		ClubsModule
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [

@@ -1,10 +1,17 @@
-export const data = {
-	facebook: 'https://www.facebook.com/ionicframework',
-	phoneNumber: '+306973216110',
-	email: {
-		to: 'skounis@gmail.com',
-		subject: 'Cordova Icons',
-		body: 'How are you? Nice greetings from Leipzig'
+export const SLIDES = [
+	{
+		image: '../../assets/img/1.jpg'
 	},
-	officeLocation: '37.7736854,-122.421034'
-};
+	{
+		image: '../../assets/img/2.jpg'
+	},
+	{
+		image: '../../assets/img/3.jpg'
+	},
+	{
+		image: '../../assets/img/4.jpg'
+	},
+	{
+		image: '../../assets/img/5.jpg'
+	}
+]

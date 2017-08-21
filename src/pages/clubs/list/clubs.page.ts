@@ -3,7 +3,7 @@ import { ClubsService } from '../clubs.service';
 import { NavController } from 'ionic-angular';
 
 @Component({
-	templateUrl: 'club.html'
+	templateUrl: 'clubs.html'
 })
 export class ClubsPage {
 	private nav: NavController;
