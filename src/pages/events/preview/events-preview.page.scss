@@ -1,0 +1,10 @@
+ion-content {
+    .map {
+        height: 48%;
+    }
+    .description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
