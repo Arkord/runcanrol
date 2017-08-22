@@ -1,4 +1,7 @@
 .getting-started {
+    .slide-section {
+        height: 50%;
+    }
     .label {
         white-space: normal;
         overflow: visible;
@@ -22,6 +25,7 @@
             background: rgba(255, 255, 255, 1);
             color: #561e83;
             padding: 10px;
+            z-index: 10;
         }
         h1 {
             margin-top: 0;

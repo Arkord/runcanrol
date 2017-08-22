@@ -9,14 +9,15 @@
 
 <ion-content class="getting-started">
     <div class="home-hello">
-        <ion-slides autoplay="5000" loop="true" speed="3000">
-            <ion-slide *ngFor="let slide of slides">
-                <img src="{{slide.image}}" />
-            </ion-slide>
-        </ion-slides>
-
-        <div class="hello-title" text-wrap>
-            <strong>2da Edición - </strong>Monterrey, NL. México
+        <div class="slide-section">
+            <ion-slides autoplay="7000" loop="true" speed="3000" effect="fade">
+                <ion-slide *ngFor="let slide of slides">
+                    <img src="{{slide.image}}" />
+                </ion-slide>
+            </ion-slides>
+            <div class="hello-title" text-wrap>
+                <strong>2da Edición - </strong>Monterrey, NL. México
+            </div>
         </div>
     </div>
 

@@ -18,6 +18,10 @@
  */
 
 ion-content {
+    .card-md,
+    .card-ios {
+        margin: 6px 10px;
+    }
     background-image: url(../assets/img/background.jpg);
     .full-layout {
         height: 100%;
