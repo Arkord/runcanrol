@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Config } from '../../config';
 import { Observable } from 'rxjs';
 import { Product } from './models/product.model';
+import { STORES } from './models/store.model';
 
 @Injectable()
 export class ProductsService {
@@ -19,4 +20,9 @@ export class ProductsService {
 			.map(x => x.json())
 			.map(x => <Product[]>x.result);
 	}
+
+	public getStores(): any {
+		return STORES;
+	}
+
 }

@@ -7,7 +7,7 @@ import { AreasPage } from '../areas/list/areas.page';
 import { EventsPage } from '../events/events.page';
 import { SitiosPage } from '../sitios/list/sitios.page';
 import { ClubsPage } from '../clubs/list/clubs.page';
-import { ProductsListPage } from '../products/list/products.list.page';
+import { ProductsStoresPage } from '../products/stores/products.stores.page';
 
 // import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
@@ -70,7 +70,7 @@ export class HomePage {
 			title: 'Tienda y Más',
 			path: 'productos',
 			icon: 'shop.jpg',
-			component: ProductsListPage
+			component: ProductsStoresPage
 		}, {
 			title: 'Eventos',
 			path: 'eventos',
