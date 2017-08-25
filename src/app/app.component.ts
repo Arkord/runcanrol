@@ -73,6 +73,13 @@ import { FirebaseCrudListPage } from '../pages/firebase/list/firebase-crud.list.
 import { PouchDbCrudListPage } from '../pages/pouchdb-crud/list/pouchdb-crud.list.page';
 import { OneSignalPage } from '../pages/one-signal/one-signal.page';
 
+import { SitiosPage } from  '../pages/sitios/list/sitios.page';
+import { ClubsPage } from '../pages/clubs/list/clubs.page';
+import { ProductsStoresPage } from '../pages/products/stores/products.stores.page';
+import { EventsPage } from '../pages/events/events.page';
+import { AreasPage } from '../pages/areas/list/areas.page';
+
+
 @Component({
 	templateUrl: 'app.html'
 })
@@ -104,22 +111,15 @@ export class MyApp {
 		this.initializeApp();
 
 		// set our app's pages
-		this.homePage = { title: 'Home', component: HomePage, icon: 'home' };
+		this.homePage = { title: 'Casa', component: HomePage, icon: 'home' };
 
 		this.genericPages = [
-			{ title: 'Badged tabs', component: BadgedTabsPage, icon: 'pricetag' },
-			// { title: 'DateTime', component: DateTimePage, icon: 'time' },
-			{ title: 'Drupal', component: DrupalListPage, icon: 'water' },
-			{ title: 'Galleries', component: GalleriesPage, icon: 'images' },
-			// { title: 'Google maps', component: GoogleMapsPage, icon: 'map' },
-			{ title: 'OAuth', component: OAuthProvidersListPage, icon: 'log-in' },
-			{ title: 'Products', component: ProductsListPage, icon: 'archive' },
-			{ title: 'RSS Feeds', component: RSSFeedsPage, icon: 'logo-rss' },
-			{ title: 'Slack', component: SlackPage, icon: 'send' },
-			{ title: 'Slides', component: SlideBoxPage, icon: 'swap' },
-			{ title: 'Vimeo', component: VimeoListPage, icon: 'logo-vimeo' },
-			{ title: 'Wordpress', component: WordpressListPage, icon: 'logo-wordpress' },
-			{ title: 'YouTube', component: YoutubeListPage, icon: 'logo-youtube' }
+			{ title: 'Cuidados', component: SitiosPage, icon: 'pricetag' },
+			{ title: 'Clubs', component: ClubsPage, icon: 'water' },
+			{ title: 'Promociones', component: GalleriesPage, icon: 'images' },
+			{ title: 'Tienda', component: ProductsStoresPage, icon: 'log-in' },
+			{ title: 'Eventos', component: EventsPage, icon: 'archive' },
+			{ title: 'Áreas', component: AreasPage, icon: 'logo-rss' }
 		];
 
 		this.nativePages = [

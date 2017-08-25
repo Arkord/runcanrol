@@ -15,9 +15,8 @@
                     {{homePage.title}}
                 </ion-item>
                 <ion-item-divider>
-                    Pagos
                 </ion-item-divider>
-                <ion-item *ngFor="let p of paymentsPages" (click)="openPage(p)">
+                <ion-item *ngFor="let p of genericPages" (click)="openPage(p)">
                     <ion-icon [name]="p.icon" item-left></ion-icon>
                     {{p.title}}
                 </ion-item>
