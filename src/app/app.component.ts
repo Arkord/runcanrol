@@ -114,12 +114,12 @@ export class MyApp {
 		this.homePage = { title: 'Casa', component: HomePage, icon: 'home' };
 
 		this.genericPages = [
-			{ title: 'Cuidados', component: SitiosPage, icon: 'pricetag' },
-			{ title: 'Clubs', component: ClubsPage, icon: 'water' },
-			{ title: 'Promociones', component: GalleriesPage, icon: 'images' },
-			{ title: 'Tienda', component: ProductsStoresPage, icon: 'log-in' },
-			{ title: 'Eventos', component: EventsPage, icon: 'archive' },
-			{ title: 'Áreas', component: AreasPage, icon: 'logo-rss' }
+			{ title: 'Cuidados', component: SitiosPage, icon: 'heart' },
+			{ title: 'Clubs', component: ClubsPage, icon: 'star' },
+			{ title: 'Promociones', component: GalleriesPage, icon: 'ribbon' },
+			{ title: 'Tienda', component: ProductsStoresPage, icon: 'basket' },
+			{ title: 'Eventos', component: EventsPage, icon: 'calendar' },
+			{ title: 'Áreas', component: AreasPage, icon: 'map' }
 		];
 
 		this.nativePages = [

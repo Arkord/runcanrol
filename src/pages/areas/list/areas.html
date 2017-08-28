@@ -10,7 +10,7 @@
 <ion-content>
     <ion-item>
         <ion-label>Tipo</ion-label>
-        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()">
+        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
             <ion-option value="todas" [selected]="true">Todas</ion-option>
             <ion-option *ngFor="let tipo of tipos" [value]="tipo.nombre">{{tipo.nombre}}</ion-option>
         </ion-select>

@@ -15,5 +15,8 @@ export class ProductsStoresPage {
         this.stores = ProductsService.getStores();
     }
     
+    goProducts(id) {
+        alert(id);
+    }
 
 }
