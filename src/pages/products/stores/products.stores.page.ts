@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ProductsListPage } from '../list/products.list.page';
 
 import { ProductsService } from '../products.service';
 
@@ -9,14 +10,18 @@ import { ProductsService } from '../products.service';
 })
 
 export class ProductsStoresPage {
+    private nav: NavController;
     private stores;
 
     constructor(ProductsService: ProductsService, nav: NavController) {
+        this.nav = nav;
         this.stores = ProductsService.getStores();
     }
     
     goProducts(id) {
-        alert(id);
+        this.nav.push(ProductsListPage, {
+            store_id: id
+        });
     }
 
 }
