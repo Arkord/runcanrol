@@ -86,6 +86,7 @@ import { AreasModule } from '../pages/areas/areas.module';
 import { EventsModule } from '../pages/events/events.module';
 import { SitiosModule } from '../pages/sitios/sitios.module';
 import { ClubsModule } from '../pages/clubs/clubs.module';
+import { PromocionesModule } from '../pages/promociones/promociones.module';
 
 export function createTranslateLoader(http: Http) {
 	return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -183,7 +184,8 @@ export function createTranslateLoader(http: Http) {
 		AreasModule,
 		EventsModule,
 		SitiosModule,
-		ClubsModule
+		ClubsModule,
+		PromocionesModule
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [

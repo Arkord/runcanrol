@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+			<ion-icon name="paw"></ion-icon>
+		</button>
+        <ion-title>Promociones</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Sitio</ion-label>
+        <ion-select [(ngModel)]="tipo" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
+            <ion-option value="todas" [selected]="true">Todos</ion-option>
+            <ion-option *ngFor="let sitio of sitios" [value]="sitio.sitio_id">{{sitio.nombre}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-card *ngFor="let promocion of promociones">
+        <ion-item>
+            <h1>{{promocion.nombre}}</h1>
+            <p>{{promocion.descripcion}}</p>
+        </ion-item>
+        <ion-card-content>
+            <p>{{promocion.tipo}}</p>
+            <p>
+                <ion-icon name="clock"></ion-icon> {{promocion.horario}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
