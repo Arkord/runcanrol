@@ -7,6 +7,7 @@ import { EventsPage } from '../events/events.page';
 import { SitiosPage } from '../sitios/list/sitios.page';
 import { ClubsPage } from '../clubs/list/clubs.page';
 import { ProductsStoresPage } from '../products/stores/products.stores.page';
+import { PromocionesPage } from '../promociones/list/promociones.page';
 
 import { Tile } from './models/tile.model';
 
@@ -45,7 +46,7 @@ export class HomePage {
 			title: 'Promociones & Descuentos',
 			path: 'slides',
 			icon: 'promo.jpg',
-			component: ClubsPage
+			component: PromocionesPage
 		}, {
 			title: 'Tienda y Más',
 			path: 'productos',
