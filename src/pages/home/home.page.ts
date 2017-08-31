@@ -1,49 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Nav } from 'ionic-angular';
 
-import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
-import { SlideBoxPage } from '../slide-box/slide-box.page';
+import { HomeService } from './home.service';
 import { AreasPage } from '../areas/list/areas.page';
 import { EventsPage } from '../events/events.page';
 import { SitiosPage } from '../sitios/list/sitios.page';
 import { ClubsPage } from '../clubs/list/clubs.page';
 import { ProductsStoresPage } from '../products/stores/products.stores.page';
 
-// import { GoogleMapsPage } from '../google-maps/google-maps.page';
 import { Tile } from './models/tile.model';
-import { EmailService } from '../../services/email.service';
-import { CallService } from '../../services/call.service';
-import { MapsService } from '../../services/maps.service';
-import { InAppBrowserService } from '../../services/in-app-browser.service';
-import { SLIDES } from './home-data';
 
 @Component({
 	templateUrl: 'home.html'
 })
 export class HomePage {
 	public tiles: Tile[][];
-	public slides: any;
+	slides: any;
 
-	private emailService: EmailService;
-	private callService: CallService;
-	private mapsService: MapsService;
-	private browserService: InAppBrowserService;
+	private HomeService: HomeService;
 	private nav: Nav;
 
-	constructor(
-		emailService: EmailService,
-		callService: CallService,
-		mapsService: MapsService,
-		browserService: InAppBrowserService,
-		nav: Nav
-	) {
-		this.emailService = emailService;
-		this.callService = callService;
-		this.mapsService = mapsService;
-		this.browserService = browserService;
+	constructor(nav: Nav, HomeService: HomeService) {
+		this.HomeService = HomeService;
 		this.nav = nav;
 		this.initTiles();
-		this.slides = SLIDES;
 	}
 
 	public navigateTo(tile) {
@@ -65,7 +45,7 @@ export class HomePage {
 			title: 'Promociones & Descuentos',
 			path: 'slides',
 			icon: 'promo.jpg',
-			component: SlideBoxPage
+			component: ClubsPage
 		}, {
 			title: 'Tienda y Más',
 			path: 'productos',
@@ -83,4 +63,9 @@ export class HomePage {
 			component: AreasPage
 		}]];
 	}
+
+	ngOnInit() {
+		this.HomeService.getSponsors().subscribe(response => this.slides = response);
+	}
+
 }

@@ -2,7 +2,7 @@
 Aplicación ofertas, lugares, eventos para tu mascota
 
 ## API
-URL http://200.57.8.124/ords/runcanrol/
+URL http://www.operhum.com/ords/runcanrol/
 
 ### area/{id}
 nombre,

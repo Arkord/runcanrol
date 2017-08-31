@@ -16,7 +16,7 @@ export class EventsService {
 	}
 
 	all() {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/eventosg/';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/eventosg/';
 		return this.http.get(url)
 			.map(response =>  this.transform(response.json().items))
 	}

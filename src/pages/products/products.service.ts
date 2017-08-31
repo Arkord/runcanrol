@@ -4,11 +4,13 @@ import { Config } from '../../config';
 import { Observable } from 'rxjs';
 import { Product } from './models/product.model';
 import { STORES } from './models/store.model';
+import { STOREPRODUCTS } from './models/storeproducts.model';
 
 @Injectable()
 export class ProductsService {
 	private http: Http;
 	private config: Config;
+	private resultStores: any;
 
 	constructor(http: Http, config: Config) {
 		this.http = http;
@@ -22,7 +24,13 @@ export class ProductsService {
 	}
 
 	public getStores(): any {
-		return STORES;
+		let url = 'http://www.operhum.com/ords/runcanrol/api/sitiosg/';
+		this.http.get(url)
+			.map(response => this.resultStores = response.json().items);
+	}
+
+	public getProductsStore(): any {
+		return STOREPRODUCTS;
 	}
 
 }

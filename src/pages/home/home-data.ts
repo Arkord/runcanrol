@@ -1,17 +1,17 @@
 export const SLIDES = [
 	{
-		image: '../../assets/img/1.jpg'
+		ruta: '../../assets/img/1.jpg'
 	},
 	{
-		image: '../../assets/img/2.jpg'
+		ruta: '../../assets/img/2.jpg'
 	},
 	{
-		image: '../../assets/img/3.jpg'
+		ruta: '../../assets/img/3.jpg'
 	},
 	{
-		image: '../../assets/img/4.jpg'
+		ruta: '../../assets/img/4.jpg'
 	},
 	{
-		image: '../../assets/img/5.jpg'
+		ruta: '../../assets/img/5.jpg'
 	}
 ]

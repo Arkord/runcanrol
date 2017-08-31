@@ -13,10 +13,10 @@
             <ion-col col-6 *ngFor="let store of stores">
                 <ion-card (click)="goProducts(store.id)">
                     <ion-item>
-                        <p>{{store.name}}</p>
+                        <p>{{store.nombre}}</p>
                     </ion-item>
                     <ion-card-content>
-                        <img src="{{store.logo }}" alt="{{store.name}}">
+                        <p>{{store.descripcion}}</p>
                     </ion-card-content>
                 </ion-card>
             </ion-col>

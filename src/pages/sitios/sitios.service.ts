@@ -16,19 +16,19 @@ export class SitiosService {
 	}
 
 	all() {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/sitiosg/';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/sitiosg/';
 		return this.http.get(url)
-			.map(response => this.result = response.json().items);
+			.map(response => this.result = response.json().items); 
 	}
 
 	byType(type) {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/sitiosp/' + type;
+		let url = 'http://www.operhum.com/ords/runcanrol/api/sitiosp/' + type;
 		return this.http.get(url)
 			.map(response => this.result = response.json().items);
 	}
 
 	getZonas() {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/zonas/';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/zonas/';
 		return this.http.get(url)
 			.map(response => this.resultZonas = response.json().items);
 	}

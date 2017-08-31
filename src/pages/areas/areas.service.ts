@@ -15,13 +15,13 @@ export class AreasService {
 	}
 
 	all() {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/areasg/';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/areasg/';
 		return this.http.get(url)
 			.map(response => this.result = response.json().items)
 	}
 
 	tipos() {
-		let url = 'http://200.57.8.124/ords/runcanrol/api/areast/';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/areast/';
 		return this.http.get(url)
 			.map(response => this.resultTipos = response.json().items)
 	}
