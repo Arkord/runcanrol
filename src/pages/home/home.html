@@ -10,7 +10,7 @@
 <ion-content class="getting-started">
     <div class="home-hello">
         <div class="slide-section">
-            <ion-slides autoplay="7000" loop="true" speed="3000" effect="fade">
+            <ion-slides *ngIf="slides && slides.length" autoplay="7000" loop="true" speed="3000" effect="fade">
                 <ion-slide *ngFor="let slide of slides">
                     <img src="{{slide.ruta}}" />
                 </ion-slide>
