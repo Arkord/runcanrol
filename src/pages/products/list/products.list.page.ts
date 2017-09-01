@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ProductsService } from '../products.service';
 import { Product } from '../models/product.model';
 import { ProductsItemPage } from '../item/products.item.page';
+import { PayPalPage } from '../../paypal/paypal.page';
 
 @Component({
 	templateUrl: 'products.list.html',
@@ -31,6 +32,10 @@ export class ProductsListPage implements OnInit {
 				this.products = products;
 			});*/
 		this.products = this.service.getProductsStore(this.store);
+	}
+
+	goPayPal() {
+		this.nav.push(PayPalPage);
 	}
 
 }
