@@ -13,6 +13,7 @@ import { ProductsItemPage } from '../item/products.item.page';
 export class ProductsListPage implements OnInit {
 	private service: ProductsService;
 	private nav: NavController;
+	private name: any;
 	private store: any;
 
 	public products: Product[];
@@ -20,20 +21,16 @@ export class ProductsListPage implements OnInit {
 	constructor(service: ProductsService, nav: NavController, navParams: NavParams) {
 		this.service = service;
 		this.nav = nav;
+		this.name = navParams.get("name");
 		this.store = navParams.get("store_id");
-		alert(this.store);
 	}
 
 	ngOnInit(): void {
-		this.service.getProducts()
-			.subscribe(posts => {
-				this.products = posts;
-			});
+		/*this.service.getProductsStore(this.store)
+			.subscribe(products => {
+				this.products = products;
+			});*/
+		this.products = this.service.getProductsStore(this.store);
 	}
 
-	public itemTapped(item) {
-		this.nav.push(ProductsItemPage, {
-			item: item
-		});
-	}
 }

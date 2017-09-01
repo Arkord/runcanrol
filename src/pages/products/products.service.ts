@@ -23,14 +23,14 @@ export class ProductsService {
 			.map(x => <Product[]>x.result);
 	}
 
-	public getStores(): any {
+	getStores(): any {
 		let url = 'http://www.operhum.com/ords/runcanrol/api/sitiosg/';
-		this.http.get(url)
+		return this.http.get(url)
 			.map(response => this.resultStores = response.json().items);
 	}
 
-	public getProductsStore(): any {
-		return STOREPRODUCTS;
+	getProductsStore(store_id): any {
+		return STOREPRODUCTS.filter(item => item.store_id == store_id);
 	}
 
 }
