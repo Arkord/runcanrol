@@ -10,22 +10,22 @@
 <ion-content padding>
     <form name="paymentForm">
         <ion-item>
-            <ion-label floating>Cantidad</ion-label>
-            <ion-input type="text" name="amount" [(ngModel)]="payment.amount"></ion-input>
+            <ion-label floating>Precio</ion-label>
+            <ion-input type="text" name="amount" [(ngModel)]="payment.amount" disabled="true"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Moneda</ion-label>
-            <ion-select [(ngModel)]="payment.currency" name="currency">
+            <ion-select [(ngModel)]="payment.currency" name="currency" disabled="true">
                 <ion-option value="{{currency}}" *ngFor="let currency of currencies">{{currency}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
             <ion-label floating>Descripción</ion-label>
-            <ion-input type="text" name="description" [(ngModel)]="payment.shortDescription"></ion-input>
+            <ion-input type="text" name="description" [(ngModel)]="payment.shortDescription" disabled="true"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Intent</ion-label>
-            <ion-input type="text" name="intent" [(ngModel)]="payment.intent"></ion-input>
+            <ion-input type="text" name="intent" [(ngModel)]="payment.intent" disabled="true"></ion-input>
         </ion-item>
         <p>
             <button ion-button block color="secondary" (click)="makePayment()">HACER PAGO</button>

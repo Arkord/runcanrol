@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavParams } from 'ionic-angular';
 import { PayPal, PayPalConfiguration, PayPalPayment } from '@ionic-native/paypal';
 import { Config } from '../../config';
 
@@ -6,11 +7,18 @@ import { Config } from '../../config';
 	templateUrl: 'paypal.html'
 })
 export class PayPalPage {
-	payment: PayPalPayment = new PayPalPayment('10.10', 'MXN', 'Correa doble para perro', 'sale');
-	currencies = ['MXN','EUR', 'USD'];
+	private price: any;
+	private name: any;
+	payment: PayPalPayment;
+	currencies = ['MXN'];
 
-	constructor(private payPal: PayPal) {
+	constructor(private payPal: PayPal, private nav: NavParams) {
+		this.price = nav.get("price");
+		this.name = nav.get("name");
+
+		this.payment = new PayPalPayment(this.price, 'MXN', this.name, 'sale')
 	}
+	
 
 	makePayment() {
 		this.payPal.init({

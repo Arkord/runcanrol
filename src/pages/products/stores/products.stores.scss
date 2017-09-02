@@ -1,7 +1,17 @@
 ion-content {
     ion-card {
+        .store-logo-placeholder {
+            img {
+                margin: 0 auto;
+                width: 128px;
+            }
+        }
         .item-md p {
             color: #fff;
         }
     }
+}
+
+.item-select-disabled ion-label {
+    opacity: 1;
 }

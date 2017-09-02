@@ -34,8 +34,11 @@ export class ProductsListPage implements OnInit {
 		this.products = this.service.getProductsStore(this.store);
 	}
 
-	goPayPal() {
-		this.nav.push(PayPalPage);
+	goPayPal(price, name) {
+		this.nav.push(PayPalPage, {
+			price: price,
+			name: name
+		});
 	}
 
 }
