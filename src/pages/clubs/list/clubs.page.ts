@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ClubsService } from '../clubs.service';
+import { ClubPreviewPage } from '../preview/club-preview.page';
 import { NavController } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 @Component({
 	templateUrl: 'clubs.html'
@@ -14,7 +16,7 @@ export class ClubsPage {
 	zona: string;
 	zonas: any;
 
-	constructor(ClubsService: ClubsService, nav: NavController) {
+	constructor(ClubsService: ClubsService, nav: NavController, private InAppBrowser: InAppBrowser) {
 		this.ClubsService = ClubsService;
 		this.nav = nav;
 		this.ClubsService.all().subscribe(
@@ -40,10 +42,18 @@ export class ClubsPage {
 		}
 	}
 
-	goToMap(id) {
-		this.nav.push(ClubsService, {
-			id: id
-		});
+	launch(url: string) {
+		const browser = this.InAppBrowser.create(url, '_self');
+	}
+
+	goToMap(name, coords) {
+		if(coords.length) {
+			this.nav.push(ClubPreviewPage, {
+				name: name,
+				coords: coords
+			});
+		}
+		
 	}
 
 }

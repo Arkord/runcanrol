@@ -24,7 +24,7 @@
             <ion-grid class="ui-runcanrol">
                 <ion-row>
                     <ion-col col-12>
-                        <p>
+                        <p (click)="goToMap(sitio.nombre, sitio.coordenadas)">
                             <ion-icon name="pin"></ion-icon> {{sitio.domicilio}}
                         </p>
                         <p>
@@ -34,7 +34,7 @@
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Web</p>
-                        <p class="tiny"> {{sitio.web}}</p>
+                        <img class="site-link" src="assets/img/cloud.png" *ngIf="sitio.web && sitio.web.length" (click)="launch(sitio.web)" />
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Contacto</p>
@@ -42,12 +42,12 @@
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Social</p>
-                        <p class="tiny"> {{sitio.facebook}}</p>
-                        <p class="tiny"> {{sitio.youtube}}</p>
+                        <img class="site-link" src="assets/img/facebook.png" *ngIf="sitio.facebook && sitio.facebook.length" (click)="launch(sitio.facebook)" />
+                        <img class="site-link" src="assets/img/youtube.png" *ngIf="sitio.youtube && sitio.youtube.length" (click)="launch(sitio.youtube)" />
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Zona</p>
-                        <p class="tiny"> {{sitio.zona}}</p>
+                        <a class="tiny"> {{sitio.zona}}</a>
                     </ion-col>
                 </ion-row>
             </ion-grid>

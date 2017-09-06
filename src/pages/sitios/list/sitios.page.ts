@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SitiosService } from '../sitios.service';
+import { SitioPreviewPage } from '../preview/sitio-preview.page';
 import { NavController } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 @Component({
 	templateUrl: 'sitios.html'
@@ -14,7 +16,7 @@ export class SitiosPage {
 	zona: string;
 	zonas: any;
 
-	constructor(SitiosService: SitiosService, nav: NavController) {
+	constructor(SitiosService: SitiosService, nav: NavController, private InAppBrowser: InAppBrowser) {
 		this.SitiosService = SitiosService;
 		this.nav = nav;
 		this.SitiosService.all().subscribe(
@@ -40,9 +42,14 @@ export class SitiosPage {
 		}
 	}
 
-	goToMap(id) {
-		this.nav.push(SitiosService, {
-			id: id
+	launch(url: string) {
+		const browser = this.InAppBrowser.create(url, '_self');
+	}
+
+	goToMap(name, coords) {
+		this.nav.push(SitioPreviewPage, {
+			name: name,
+			coords: coords
 		});
 	}
 

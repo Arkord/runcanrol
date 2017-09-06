@@ -1,5 +1,8 @@
 {
-    "name": "Run Can Rol",
-    "app_id": "5839dfa7",
-    "type": "ionic-angular"
+  "name": "Run Can Rol",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "app_id": "1897d3fa"
 }

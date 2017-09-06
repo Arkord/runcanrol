@@ -11,20 +11,22 @@
     <ion-grid class="ui-runcanrol">
         <ion-row>
             <ion-col col-12 *ngFor="let store of stores">
-                <ion-card (click)="goProducts(store.sitio_id, store.nombre)">
+                <ion-card>
                     <ion-item>
                         <p>{{store.nombre}}</p>
                     </ion-item>
                     <ion-card-content>
                         <div class="store-logo-placeholder">
-                            <img class="store-logo" src="../../../assets/img/store_placeholder.png" alt="">
+                            <img class="store-logo" src="assets/img/store_placeholder.png" alt="">
                         </div>
 
                         <p>{{store.descripcion}}</p>
-                        <p>
+                        <p (click)="goToMap(store.nombre, store.coordenadas)">
                             <ion-icon name="pin"></ion-icon> {{store.domicilio}}</p>
                         <p>
                             <ion-icon name="phone-portrait"></ion-icon> {{store.telefono}} / {{store.celular}}</p>
+                        <a (click)="goProducts(store.sitio_id, store.nombre)">
+                            <ion-icon name="cube"></ion-icon> Ver productos</a>
                     </ion-card-content>
                 </ion-card>
             </ion-col>

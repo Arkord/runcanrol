@@ -34,7 +34,7 @@
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Web</p>
-                        <p class="tiny"> {{club.web}}</p>
+                        <img class="site-link" src="assets/img/cloud.png" *ngIf="club.web && club.web.length" (click)="launch(club.web)" />
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Contacto</p>
@@ -42,8 +42,8 @@
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Social</p>
-                        <p class="tiny"> {{club.facebook}}</p>
-                        <p class="tiny"> {{club.youtube}}</p>
+                        <img class="site-link" src="assets/img/facebook.png" *ngIf="club.facebook && club.facebook.length" (click)="launch(club.facebook)" />
+                        <img class="site-link" src="assets/img/youtube.png" *ngIf="club.youtube && club.youtube.length" (click)="launch(club.youtube)" />
                     </ion-col>
                     <ion-col col-6>
                         <p class="special">Zona</p>

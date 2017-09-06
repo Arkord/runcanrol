@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProductsListPage } from '../list/products.list.page';
+import { StorePreviewPage } from '../preview/store-preview.page';
 
 import { ProductsService } from '../products.service';
 
@@ -23,6 +24,13 @@ export class ProductsStoresPage {
         //console.log(this.stores);
     }
     
+    goToMap(name, coords) {
+		this.nav.push(StorePreviewPage, {
+			name: name,
+			coords: coords
+		});
+	}
+
     goProducts(id, name) {
         this.nav.push(ProductsListPage, {
             store_id: id,
