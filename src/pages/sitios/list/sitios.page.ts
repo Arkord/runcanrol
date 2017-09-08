@@ -47,10 +47,12 @@ export class SitiosPage {
 	}
 
 	goToMap(name, coords) {
-		this.nav.push(SitioPreviewPage, {
-			name: name,
-			coords: coords
-		});
+		if(coords) {
+			this.nav.push(SitioPreviewPage, {
+				name: name,
+				coords: coords
+			});
+		}
 	}
 
 }

@@ -25,10 +25,12 @@ export class ProductsStoresPage {
     }
     
     goToMap(name, coords) {
-		this.nav.push(StorePreviewPage, {
-			name: name,
-			coords: coords
-		});
+        if(coords) {
+            this.nav.push(StorePreviewPage, {
+                name: name,
+                coords: coords
+            });
+        }
 	}
 
     goProducts(id, name) {

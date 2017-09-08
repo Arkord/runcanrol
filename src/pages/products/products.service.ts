@@ -17,12 +17,6 @@ export class ProductsService {
 		this.config = config;
 	}
 
-	public getProducts(): Observable<Product[]> {
-		return this.http.get(this.config.productsUrl)
-			.map(x => x.json())
-			.map(x => <Product[]>x.result);
-	}
-
 	getStores(): any {
 		let url = 'http://www.operhum.com/ords/runcanrol/api/sitiosg/';
 		return this.http.get(url)
@@ -30,7 +24,14 @@ export class ProductsService {
 	}
 
 	getProductsStore(store_id): any {
-		return STOREPRODUCTS.filter(item => item.store_id == store_id);
+		let url = 'http://www.operhum.com/ords/runcanrol/api/productos/41';
+		return this.http.get(url)
+			.map(response => this.resultStores = response.json().items);
+	}
+	getProductsStoreImg(mode: string, product_id): any {
+		let url = 'http://www.operhum.com/ords/runcanrol/api/imgproductos/' + product_id;
+		return this.http.get(url)
+			.map(response => response.json().items);
 	}
 
 }

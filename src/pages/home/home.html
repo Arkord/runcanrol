@@ -12,21 +12,21 @@
         <div class="slide-section">
             <ion-slides *ngIf="slides && slides.length" autoplay="7000" loop="true" speed="3000" effect="fade">
                 <ion-slide *ngFor="let slide of slides">
-                    <img src="{{slide.ruta}}" />
+                    <img src="{{slide.ruta}}" (click)="launch(slide.link)" />
                 </ion-slide>
             </ion-slides>
-            <div class="hello-title" text-wrap>
+            <div class=" hello-title " text-wrap>
                 <strong>2da Edición - </strong>Monterrey, NL. México
             </div>
         </div>
     </div>
 
-    <ion-row *ngFor="let tilePair of tiles">
-        <ion-col col-6 *ngFor="let tile of tilePair">
-            <ion-card class="tile" (click)="navigateTo(tile)">
+    <ion-row *ngFor="let tilePair of tiles ">
+        <ion-col col-6 *ngFor="let tile of tilePair ">
+            <ion-card class="tile " (click)="navigateTo(tile) ">
                 <ion-card-content>
-                    <ion-item class="no-wrap">
-                        <img src="assets/img/{{tile.icon}}" alt="tile.icon">
+                    <ion-item class="no-wrap ">
+                        <img src="assets/img/{{tile.icon}} " alt="tile.icon ">
                     </ion-item>
                 </ion-card-content>
             </ion-card>

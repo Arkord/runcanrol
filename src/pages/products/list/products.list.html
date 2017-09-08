@@ -10,14 +10,16 @@
 <ion-content>
     <ion-grid class="ui-runcanrol">
         <ion-row>
-            <ion-col col-6 *ngFor="let product of products" (click)="goPayPal(product.price, product.name)">
+            <ion-col col-12 *ngFor="let product of products" (click)="goPayPal(product.precio, product.nombre)">
                 <ion-card>
                     <ion-item>
-                        <p>{{product.name}}</p>
+                        <h3>{{product.nombre}}</h3>
+                        <p>{{product.descripcion}}</p>
                     </ion-item>
                     <ion-card-content>
-                        <img src="{{product.image}}" alt="">
-                        <p>Precio: ${{product.price}}</p>
+                        <img [src]="getImage(product.producto_id)" alt="producto">
+                        <p>Precio: ${{product.precio}}</p>
+                        <p>Disponible: {{product.disponible}}</p>
                     </ion-card-content>
                 </ion-card>
             </ion-col>

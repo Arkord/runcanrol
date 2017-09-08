@@ -10,6 +10,7 @@ import { ProductsStoresPage } from '../products/stores/products.stores.page';
 import { PromocionesPage } from '../promociones/list/promociones.page';
 
 import { Tile } from './models/tile.model';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 @Component({
 	templateUrl: 'home.html'
@@ -21,7 +22,7 @@ export class HomePage {
 	private HomeService: HomeService;
 	private nav: Nav;
 
-	constructor(nav: Nav, HomeService: HomeService) {
+	constructor(nav: Nav, HomeService: HomeService, private InAppBrowser: InAppBrowser) {
 		this.HomeService = HomeService;
 		this.nav = nav;
 		this.initTiles();
@@ -69,4 +70,7 @@ export class HomePage {
 		this.HomeService.getSponsors().subscribe(response => this.slides = response);
 	}
 
+	launch(url: string) {
+		const browser = this.InAppBrowser.create(url, '_self');
+	}
 }

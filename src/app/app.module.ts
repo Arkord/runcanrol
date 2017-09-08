@@ -4,14 +4,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
-import { CloudModule } from '@ionic/cloud-angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { AngularFireModule } from 'angularfire2';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
 import { CustomComponentsModule } from '../components/custom-components.module';
-import { cloudSettings, Config } from '../config';
+import { Config } from '../config';
 import { ComponentsModule } from '../pages/components/components.module';
 import { HomeModule } from '../pages/home/home.module';
 import { I18nModule } from '../pages/i18n-capabilities/i18n-capabilities.module';
@@ -41,14 +39,12 @@ export function createTranslateLoader(http: Http) {
 		HttpModule,
 		IonicStorageModule.forRoot(),
 		IonicModule.forRoot(MyApp),
-		CloudModule.forRoot(cloudSettings),
 		AgmCoreModule.forRoot(),
 		TranslateModule.forRoot({
 			provide: TranslateLoader,
 			useFactory: (createTranslateLoader),
 			deps: [Http]
 		}),
-		AngularFireModule.initializeApp(Config.firebase),
 
 		CustomComponentsModule,
 

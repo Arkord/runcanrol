@@ -47,7 +47,7 @@ export class ClubsPage {
 	}
 
 	goToMap(name, coords) {
-		if(coords.length) {
+		if(coords) {
 			this.nav.push(ClubPreviewPage, {
 				name: name,
 				coords: coords
