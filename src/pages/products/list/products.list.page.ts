@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { ProductsService } from '../products.service';
-import { Product } from '../models/product.model';
-import { ProductsItemPage } from '../item/products.item.page';
 import { PayPalPage } from '../../paypal/paypal.page';
 
 @Component({
@@ -19,10 +17,11 @@ export class ProductsListPage implements OnInit {
 	private imgUrl: string;
 	private images;
 
-	public products: Product[];
+	public products;
 
 	constructor(service: ProductsService, nav: NavController, navParams: NavParams) {
 		this.images = [];
+		this.products = [];
 		this.service = service;
 		this.nav = nav;
 		this.name = navParams.get("name");

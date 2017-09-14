@@ -15,6 +15,7 @@
                     <img src="{{slide.ruta}}" (click)="launch(slide.link)" />
                 </ion-slide>
             </ion-slides>
+            <img *ngIf="slides && !slides.length" src="assets/img/logo.jpg">
             <div class=" hello-title " text-wrap>
                 <strong>2da Edición - </strong>Monterrey, NL. México
             </div>

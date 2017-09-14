@@ -1,5 +1,5 @@
 import { Component,  ElementRef } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { EventsService } from './events.service';
 import { EventsPreviewPage } from './preview/events-preview.page';
 import * as moment from 'moment';
@@ -25,7 +25,7 @@ export class EventsPage {
     currentDate: this.selectedDay
   }
 
-  constructor(public nav: NavController, EventsService: EventsService, private alertCtrl: AlertController) {
+  constructor(public nav: NavController, EventsService: EventsService) {
     this.EventsService = EventsService;
     this.EventsService.all().subscribe( response => this.eventSource = response )
   }

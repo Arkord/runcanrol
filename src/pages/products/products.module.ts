@@ -4,7 +4,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 
 import { ProductsStoresPage } from './stores/products.stores.page';
 import { StorePreviewPage } from './preview/store-preview.page';
-import { ProductsItemPage } from './item/products.item.page';
 import { ProductsListPage } from './list/products.list.page';
 import { CustomComponentsModule } from '../../components/custom-components.module';
 
@@ -16,13 +15,11 @@ import { CustomComponentsModule } from '../../components/custom-components.modul
 	],
 	declarations: [
 		ProductsStoresPage,
-		ProductsItemPage,
 		ProductsListPage,
 		StorePreviewPage
 	],
 	entryComponents: [
 		ProductsStoresPage,
-		ProductsItemPage,
 		ProductsListPage,
 		StorePreviewPage
 	]

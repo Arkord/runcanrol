@@ -1,8 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 import { AreasService } from '../areas.service';
-import { AreaPage } from '../item/area.page';
-import _ from 'lodash';
 
 import { style } from './area-preview.style';
 
@@ -12,7 +10,6 @@ declare var google;
 	templateUrl: 'area-preview.html'
 })
 export class AreaPreviewPage {
-	private nav: NavController;
 	private AreasService: AreasService;
 	private mapStyle = style;
 	areaId: number;

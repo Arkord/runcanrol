@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Config } from '../../config';
 import { Observable } from 'rxjs';
-import { Product } from './models/product.model';
-import { STORES } from './models/store.model';
-import { STOREPRODUCTS } from './models/storeproducts.model';
 
 @Injectable()
 export class ProductsService {
@@ -24,7 +21,7 @@ export class ProductsService {
 	}
 
 	getProductsStore(store_id): any {
-		let url = 'http://www.operhum.com/ords/runcanrol/api/productos/41';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/productos/' + store_id;
 		return this.http.get(url)
 			.map(response => this.resultStores = response.json().items);
 	}

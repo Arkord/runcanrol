@@ -1,4 +1,5 @@
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { AgmCoreModule } from '@agm/core';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
@@ -66,6 +67,7 @@ export function createTranslateLoader(http: Http) {
 	],
 	providers: [
 		Config,
+		SplashScreen,
 		Base64Service,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 		InAppBrowser,

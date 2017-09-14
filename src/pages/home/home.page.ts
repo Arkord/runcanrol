@@ -29,7 +29,7 @@ export class HomePage {
 	}
 
 	public navigateTo(tile) {
-		this.nav.setRoot(tile.component);
+		this.nav.push(tile.component);
 	}
 
 	private initTiles(): void {

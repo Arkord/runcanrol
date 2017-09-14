@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import _ from 'lodash';
+import { NavParams } from 'ionic-angular';
 
 import { style } from './club-preview.style';
 
@@ -10,7 +9,6 @@ declare var google;
 	templateUrl: 'club-preview.html'
 })
 export class ClubPreviewPage {
-	private nav: NavController;
 	private mapStyle = style;
 	map: any;
 

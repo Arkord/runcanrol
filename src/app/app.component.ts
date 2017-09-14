@@ -4,9 +4,6 @@ import { Platform, MenuController, App, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { HomePage } from '../pages/home/home.page';
-import { ProductsListPage } from '../pages/products/list/products.list.page';
-import { CalendarPage } from '../pages/calendar/calendar.page';
-import { ComponentsListPage } from '../pages/components/list/components.list.page';
 import { StripePage } from '../pages/stripe/stripe.page';
 import { PayPalPage } from '../pages/paypal/paypal.page';
 import { SitiosPage } from  '../pages/sitios/list/sitios.page';
@@ -14,6 +11,7 @@ import { ClubsPage } from '../pages/clubs/list/clubs.page';
 import { ProductsStoresPage } from '../pages/products/stores/products.stores.page';
 import { EventsPage } from '../pages/events/events.page';
 import { AreasPage } from '../pages/areas/list/areas.page';
+import { SplashScreen } from "@ionic-native/splash-screen";
 
 
 @Component({
@@ -36,8 +34,17 @@ export class MyApp {
 
 	@ViewChild(Nav) nav: Nav;
 
-	constructor(platform: Platform, menu: MenuController,  app: App, private statusBar: StatusBar) {
-
+	constructor(platform: Platform, menu: MenuController,  app: App, private statusBar: StatusBar, public splashscreen: SplashScreen) {
+		platform.registerBackButtonAction(()=> {
+			//let view = this.nav.getActive();
+			if (!this.nav.canGoBack()) {
+				this.platform.exitApp();
+			}
+			else {
+				this.nav.pop({}) 
+			}
+		});
+		
 		this.menu = menu;
 		// set up our app
 		this.app = app;
