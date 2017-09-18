@@ -18,6 +18,11 @@
  */
 
 ion-content {
+    .item-ios {
+        p {
+            color: #fff;
+        }
+    }
     .card-md,
     .card-ios {
         margin: 6px 10px;
