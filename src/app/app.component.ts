@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, App, Nav } from 'ionic-angular';
+import { Platform, MenuController, App, Nav, AlertController } from 'ionic-angular';
+import { Network } from "ionic-native";
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { HomePage } from '../pages/home/home.page';
@@ -34,7 +35,14 @@ export class MyApp {
 
 	@ViewChild(Nav) nav: Nav;
 
-	constructor(platform: Platform, menu: MenuController,  app: App, private statusBar: StatusBar, public splashscreen: SplashScreen) {
+	constructor(
+		platform: Platform, 
+		menu: MenuController,  
+		app: App, 
+		private statusBar: StatusBar, 
+		public splashscreen: SplashScreen,
+		private alertCtrl: AlertController
+	) {
 		platform.registerBackButtonAction(()=> {
 			//let view = this.nav.getActive();
 			if (!this.nav.canGoBack()) {
@@ -75,6 +83,15 @@ export class MyApp {
 
 	initializeApp() {
 		this.platform.ready().then(() => {
+			let networkState = Network.type;
+			let alert = this.alertCtrl.create({
+				title: "Conexión a internet",
+				subTitle: "Necesitas conexión a internet para poder ver el contenido de RunCanRol, por favor conéctate a una red y vuelve a abrir la aplicación.",
+				buttons: ["OK"]
+			});
+			if(Network.type == 'none') {
+				alert.present();
+			}
 			this.statusBar.styleDefault();
 		});
 	}
