@@ -104,4 +104,8 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.0.4" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="esta aplicación puede utilizar la cámara para que puedas compartir tu experiencia en los eventos" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="esta aplicación te puede permitir compartir tus experiencias en los eventos" />
+    </plugin>
 </widget>
