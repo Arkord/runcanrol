@@ -43,7 +43,7 @@ export class ClubsPage {
 	}
 
 	launch(url: string) {
-		const browser = this.InAppBrowser.create(url, '_self');
+		const browser = this.InAppBrowser.create(url, '_system');
 	}
 
 	goToMap(name, coords) {
