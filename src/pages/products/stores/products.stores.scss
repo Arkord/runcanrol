@@ -1,3 +1,9 @@
+.blue {
+    background: url(assets/img/blue.png);
+    background-position-y: -32px;
+    padding: 0 8px;
+}
+
 ion-content {
     ion-card {
         .store-logo-placeholder {
@@ -14,4 +20,9 @@ ion-content {
 
 .item-select-disabled ion-label {
     opacity: 1;
+}
+
+.ver-productos {
+    width: 158px;
+    margin: 6px auto;
 }

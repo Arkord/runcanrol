@@ -36,6 +36,35 @@ ion-content {
     .full-layout {
         height: 100%;
     }
+    .orange.card-md,
+    .orange.card-ios {
+        background: url(../assets/img/orange.png);
+    }
+    .yellow.card-md,
+    .yellow.card-ios {
+        background: url(../assets/img/yellow.png);
+        background-position-y: -8px;
+    }
+    .red-list {
+        background: url(../assets/img/red.png);
+        background-position-y: -38px;
+        padding: 8px;
+    }
+    .red-filter {
+        background: url(../assets/img/red.png);
+        background-position-y: -56px;
+    }
+    .blue {
+        background: url(../assets/img/blue.png);
+        background-position-y: -32px;
+        padding: 0 8px;
+    }
+    .green.card-md,
+    .green.card-ios {
+        background: url(../assets/img/green.png);
+        background-position-y: -22px;
+        padding: 8px;
+    }
     .map,
     .highlight {
         width: 100%;
@@ -51,27 +80,18 @@ ion-content {
         height: 40%
     }
     .details {
-        background: #f1572f;
+        margin-top: 10px;
         color: #ffffff;
         p {
-            margin: 2px 0;
             font-size: 1em;
             font-weight: bold;
         }
         ion-icon {
-            font-size: 3em;
-        }
-        hr {
-            background-color: #ffffff;
+            font-size: 2em;
         }
         .no-padding {
             padding: 0;
         }
-    }
-    .description {
-        background: #5e1d88;
-        padding: 8px;
-        font-size: 1.1em;
     }
 }
 
@@ -199,5 +219,5 @@ h1.as-header-icon ion-icon {
 
 .content-md hr,
 .content-ios hr {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }

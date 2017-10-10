@@ -11,22 +11,37 @@
     <ion-grid class="ui-runcanrol">
         <ion-row>
             <ion-col col-12 *ngFor="let store of stores">
-                <ion-card>
-                    <ion-item>
-                        <p>{{store.nombre}}</p>
-                    </ion-item>
+                <ion-card class="blue">
+                    <h2>{{store.nombre}}</h2>
                     <ion-card-content>
                         <div class="store-logo-placeholder">
                             <img class="store-logo" src="assets/img/store_placeholder.png" alt="">
                         </div>
 
                         <p>{{store.descripcion}}</p>
-                        <p (click)="goToMap(store.nombre, store.coordenadas)">
-                            <ion-icon name="pin"></ion-icon> {{store.domicilio}}</p>
-                        <p>
-                            <ion-icon name="phone-portrait"></ion-icon> {{store.telefono}} / {{store.celular}}</p>
+
+                        <div class="card-info" *ngIf="store.nombre && store.nombre.length" (click)="goToMap(store.nombre, store.coordenadas)">
+                            <div class="card-icon">
+                                <img src="assets/img/address.png" alt="dirección">
+                            </div>
+                            <div class="card-text">
+                                <p> {{store.domicilio}}</p>
+                            </div>
+                        </div>
+
+                        <div class="card-info" *ngIf="store.telefono && store.telefono.length">
+                            <div class="card-icon">
+                                <img class="icon-phone" src="assets/img/phone.png" alt="teléfono">
+                            </div>
+                            <div class="card-text">
+                                <p>{{store.telefono}}</p>
+                                <p>{{store.celular}}</p>
+                            </div>
+                        </div>
+
                         <a (click)="goProducts(store.sitio_id, store.nombre)">
-                            <ion-icon name="cube"></ion-icon> Ver productos</a>
+                            <img src="assets/img/productos.png" alt="ver productos" class="ver-productos" />
+                        </a>
                     </ion-card-content>
                 </ion-card>
             </ion-col>

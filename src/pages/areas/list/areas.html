@@ -8,28 +8,34 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
+    <ion-item class="green-filter">
         <ion-label>Tipo</ion-label>
         <ion-select [(ngModel)]="tipo" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
             <ion-option value="todas" [selected]="true">Todas</ion-option>
             <ion-option *ngFor="let tipo of tipos" [value]="tipo.nombre">{{tipo.nombre}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-card *ngFor="let area of areas">
-        <ion-item>
-            <h1>{{area.nombre}}</h1>
-            <p>{{area.descripcion}}</p>
-        </ion-item>
+    <ion-card class="green" *ngFor="let area of areas">
         <ion-card-content>
-            <p>{{area.tipo}}</p>
-            <p>
-                <ion-icon name="clock"></ion-icon> {{area.horario}}
-            </p>
+            <h2>{{area.nombre}}</h2>
+            <hr>
+            <p>{{area.descripcion}}</p>
+            <div class="area-block">
+                <div class="card-info" *ngIf="area.horario && area.horario.length" (click)="goToMap(sitio.nombre, sitio.coordenadas)">
+                    <div class="card-icon">
+                        <img src="assets/img/hour.png" alt="dirección">
+                    </div>
+                    <div class="card-text">
+                        <p> {{area.horario}}</p>
+                    </div>
+                </div>
+                <a (click)="goToMap(area.area_id)">
+                    <img class="more" src="assets/img/mas.png" alt="ver más">
+                </a>
+            </div>
 
-            <a (click)="goToMap(area.area_id)">
-                <ion-icon name="paw"></ion-icon>
-                Ver más
-            </a>
+
+            <h3 class="area-types">{{area.tipo}}</h3>
         </ion-card-content>
     </ion-card>
 </ion-content>

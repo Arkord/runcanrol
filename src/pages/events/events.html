@@ -9,7 +9,9 @@
 
 
 <ion-content padding>
-    <calendar [noEventsLabel]="calendar.label" [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate" (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)"
-        step="30" class="calendar">
-    </calendar>
+    <ion-item class="red-filter">
+        <calendar [noEventsLabel]="calendar.label" [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate" (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)"
+            step="30" class="calendar">
+        </calendar>
+    </ion-item>
 </ion-content>

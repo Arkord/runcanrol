@@ -20,7 +20,7 @@
                         <img [src]="getImage(product.producto_id)" alt="producto">
                         <p>Precio: ${{product.precio}}</p>
                         <p>Disponible: {{product.disponible}}</p>
-                        <div class="comprar" (click)="goPayPal(product.precio, product.nombre)">
+                        <div class="comprar" (click)="goPayPal(product.precio, product.nombre, name)">
                             <img src="assets/img/paypal.png" alt="paypal"><span> Comprar</span>
                         </div>
                     </ion-card-content>

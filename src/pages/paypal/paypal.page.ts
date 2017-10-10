@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 import { PayPal, PayPalConfiguration, PayPalPayment } from '@ionic-native/paypal';
+import { AlertController } from 'ionic-angular';
 import { Config } from '../../config';
 
 @Component({
@@ -9,14 +10,18 @@ import { Config } from '../../config';
 export class PayPalPage {
 	private price: any;
 	private name: any;
+	private store: any;
 	payment: PayPalPayment;
 	currencies = ['MXN'];
 
-	constructor(private payPal: PayPal, private nav: NavParams) {
+	constructor(private payPal: PayPal, private nav: NavParams, public alertCtrl: AlertController) {
 		this.price = nav.get("price");
 		this.name = nav.get("name");
+		this.store = nav.get("store");
 
-		this.payment = new PayPalPayment(this.price, 'MXN', this.name, 'sale')
+		let product =`${this.name} (${this.store})`;
+
+		this.payment = new PayPalPayment(this.price, 'MXN', product, 'sale')
 	}
 	
 
@@ -27,7 +32,13 @@ export class PayPalPage {
 		}).then(() => {
 			this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({})).then(() => {
 				this.payPal.renderSinglePaymentUI(this.payment).then((response) => {
-					alert(`Successfully paid. Status = ${response.response.state}`);
+					//alert(`Pago exitoso. Orden = ${response.response.id}`);
+					const alert = this.alertCtrl.create({
+						title: 'Pago exitoso',
+						subTitle: `Su orden: ${response.response.id}`,
+						buttons: ['Aceptar']
+					  });
+					  alert.present();
 					console.log(response);
 				}, () => {
 					console.error('Error or render dialog closed without being successful');

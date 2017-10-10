@@ -1,8 +1,10 @@
+.red-list {
+    background-position-y: -38px;
+    padding: 8px;
+}
+
 ion-content {
     .map {
-        height: 48%;
-    }
-    .description {
-        overflow-y: scroll;
+        height: 250px;
     }
 }

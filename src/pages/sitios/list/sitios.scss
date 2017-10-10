@@ -1,4 +1,10 @@
-.card-md,
-.card-ios {
-    background: url(../../assets/img/orange.png);
+.orange.card-md,
+.orange.card-ios {
+    background: url(assets/img/orange.png);
+}
+
+.orange .item-md,
+.orange .item-ios,
+.orange-filter {
+    background-color: #dc4f10;
 }

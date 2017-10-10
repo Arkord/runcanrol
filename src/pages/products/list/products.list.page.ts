@@ -64,10 +64,11 @@ export class ProductsListPage implements OnInit {
 		}
 	}
 
-	goPayPal(price, name) {
+	goPayPal(price, name, store) {
 		this.nav.push(PayPalPage, {
 			price: price,
-			name: name
+			name: name,
+			store: store
 		});
 	}
 

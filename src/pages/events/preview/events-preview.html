@@ -3,38 +3,41 @@
         <button ion-button menuToggle>
 			<ion-icon name="paw"></ion-icon>
 		</button>
-        <ion-title>{{title}}</ion-title>
+        <ion-title>Evento</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <div class="full-layout">
-        <div class="description">
-            {{description}}
-        </div>
-        <div class="details">
-            <ion-grid>
-                <ion-row>
-                    <ion-col col-3 text-center>
-                        <ion-icon name="calendar"></ion-icon>
-                    </ion-col>
-                    <ion-col col-9>
-                        <p>{{start}}</p>
-                        <p>{{end}}</p>
-                    </ion-col>
-                    <ion-col col-9 offset-3 class="no-padding">
-                        <hr>
-                    </ion-col>
-                    <ion-col col-3 text-center>
-                        <ion-icon name="clipboard"></ion-icon>
-                    </ion-col>
-                    <ion-col col-9>
-                        <p>{{cost}}</p>
-                        <p>{{type}}</p>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </div>
-        <div #map class="map"></div>
-    </div>
+    <ion-card class="red-list">
+        <ion-card-content>
+            <div class="description">
+                <h2>{{title}}</h2>
+                <hr>
+                <p> {{description}}</p>
+            </div>
+            <div class="details">
+                <p>Detalles</p>
+                <hr>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="calendar"></ion-icon>
+                        </ion-col>
+                        <ion-col col-10>
+                            <p>{{start}}</p>
+                            <p>{{end}}</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="clipboard"></ion-icon>
+                        </ion-col>
+                        <ion-col col-10>
+                            <p>{{cost}}</p>
+                            <p>{{type}}</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div #map class="map"></div>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

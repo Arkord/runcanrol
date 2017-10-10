@@ -8,14 +8,14 @@
 </ion-header>
 
 <ion-content>
-    <ion-item class="filter">
+    <ion-item class="orange-filter">
         <ion-label>Zona</ion-label>
         <ion-select [(ngModel)]="zona" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
             <ion-option value="todas" [selected]="true">Todas</ion-option>
             <ion-option *ngFor="let zona of zonas" [value]="zona.nombre">{{zona.nombre}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-card *ngFor="let sitio of sitios">
+    <ion-card class="orange" *ngFor="let sitio of sitios">
         <ion-item>
             <h2>{{sitio.nombre}}</h2>
             <p>{{sitio.descripcion}}</p>
@@ -26,7 +26,7 @@
                     <ion-col col-12>
                         <p>Generales</p>
                         <hr>
-                        <div class="card-info" (click)="goToMap(sitio.nombre, sitio.coordenadas)">
+                        <div class="card-info" *ngIf="sitio.nombre && sitio.nombre.length" (click)="goToMap(sitio.nombre, sitio.coordenadas)">
                             <div class="card-icon">
                                 <img src="assets/img/address.png" alt="dirección">
                             </div>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
 
-                        <div class="card-info" *ngIf="sitio.contacto && sitio.contacto">
+                        <div class="card-info" *ngIf="sitio.contacto && sitio.contacto.length">
                             <div class="card-icon">
                                 <img class="icon-phone" src="assets/img/mail.png" alt="email">
                             </div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
 
-                        <div class="card-info" *ngIf="sitio.telefono && sitio.telefono">
+                        <div class="card-info" *ngIf="sitio.telefono && sitio.telefono.length">
                             <div class="card-icon">
                                 <img class="icon-phone" src="assets/img/phone.png" alt="teléfono">
                             </div>
@@ -73,5 +73,5 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-    <h4 *ngIf="!sitos || !sitios.length">Aún no hay sitios disponibles</h4>
+    <h4 *ngIf="!sitios || !sitios.length">Aún no hay sitios disponibles</h4>
 </ion-content>

@@ -8,46 +8,67 @@
 </ion-header>
 
 <ion-content>
-    <ion-item class="filter">
+    <ion-item class="yellow-filter">
         <ion-label>Zona</ion-label>
         <ion-select [(ngModel)]="zona" (ionChange)="onChange()" okText="Aceptar" cancelText="Cerrar">
             <ion-option value="todas" [selected]="true">Todas</ion-option>
             <ion-option *ngFor="let zona of zonas" [value]="zona.nombre">{{zona.nombre}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-card *ngFor="let club of clubs">
+    <ion-card class="yellow" *ngFor="let club of clubs">
         <ion-item>
-            <h1>{{club.nombre}}</h1>
+            <h2>{{club.nombre}}</h2>
             <p>{{club.descripcion}}</p>
         </ion-item>
         <ion-card-content>
             <ion-grid class="ui-runcanrol">
                 <ion-row>
                     <ion-col col-12>
-                        <p>
-                            <ion-icon name="pin"></ion-icon> {{club.domicilio}}
-                        </p>
-                        <p>
-                            <ion-icon name="phone-portrait"></ion-icon> {{club.telefono}} / {{club.celular}}
-                        </p>
-                        <p>
+                        <p>Generales</p>
+                        <hr>
+                        <div class="card-info" *ngIf="club.nombre && club.nombre.length" (click)="goToMap(club.nombre, club.coordenadas)">
+                            <div class="card-icon">
+                                <img src="assets/img/address.png" alt="dirección">
+                            </div>
+                            <div class="card-text">
+                                <p> {{club.domicilio}}</p>
+                            </div>
+                        </div>
+
+                        <div class="card-info" *ngIf="club.contacto && club.contacto.length">
+                            <div class="card-icon">
+                                <img class="icon-phone" src="assets/img/mail.png" alt="email">
+                            </div>
+                            <div class="card-text">
+                                <p>{{club.contacto}}</p>
+                            </div>
+                        </div>
+
+                        <div class="card-info" *ngIf="club.telefono && club.telefono.length">
+                            <div class="card-icon">
+                                <img class="icon-phone" src="assets/img/phone.png" alt="teléfono">
+                            </div>
+                            <div class="card-text">
+                                <p>{{club.telefono}}</p>
+                                <p>{{club.celular}}</p>
+                            </div>
+                        </div>
                     </ion-col>
-                    <ion-col col-6>
-                        <p class="special">Web</p>
-                        <img class="site-link" src="assets/img/cloud.png" *ngIf="club.web && club.web.length" (click)="launch(club.web)" />
+                    <ion-col col-12>
+                        <div class="card-info">
+                            <p>Enlaces</p>
+                            <hr>
+                            <img class="site-link" src="assets/img/cloud.png" *ngIf="club.web && club.web.length" (click)="launch(club.web)" />
+                            <img class="site-link" src="assets/img/facebook.png" *ngIf="club.facebook && club.facebook.length" (click)="launch(club.facebook)" />
+                            <img class="site-link" src="assets/img/youtube.png" *ngIf="club.youtube && club.youtube.length" (click)="launch(club.youtube)" />
+                        </div>
                     </ion-col>
-                    <ion-col col-6>
-                        <p class="special">Contacto</p>
-                        <p class="tiny"> {{club.contacto}}</p>
-                    </ion-col>
-                    <ion-col col-6>
-                        <p class="special">Social</p>
-                        <img class="site-link" src="assets/img/facebook.png" *ngIf="club.facebook && club.facebook.length" (click)="launch(club.facebook)" />
-                        <img class="site-link" src="assets/img/youtube.png" *ngIf="club.youtube && club.youtube.length" (click)="launch(club.youtube)" />
-                    </ion-col>
-                    <ion-col col-6>
-                        <p class="special">Zona</p>
-                        <p class="tiny"> {{club.zona}}</p>
+
+
+                    <ion-col col-12>
+                        <p>Zona</p>
+                        <hr>
+                        <p>{{club.zona}}</p>
                     </ion-col>
                 </ion-row>
             </ion-grid>
