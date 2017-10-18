@@ -24,6 +24,13 @@ export class PromocionesPage {
 	}
 
 	onChange() {
+		console.log(this.sitio);
+		this.PromocionesService.filter(this.sitio).subscribe(
+			response => {
+				console.log(response, this.promociones);
+				this.promociones = response;
+			}
+		);
 		this.PromocionesService.filter(this.sitio).subscribe(
 			response =>  this.promociones = response 
 		);

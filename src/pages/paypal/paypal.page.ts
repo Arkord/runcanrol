@@ -30,7 +30,7 @@ export class PayPalPage {
 			PayPalEnvironmentProduction: Config.payPalEnvironmentProduction,
 			PayPalEnvironmentSandbox: Config.payPalEnvironmentSandbox
 		}).then(() => {
-			this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({})).then(() => {
+			this.payPal.prepareToRender('PayPalEnvironmentProduction', new PayPalConfiguration({})).then(() => {
 				this.payPal.renderSinglePaymentUI(this.payment).then((response) => {
 					//alert(`Pago exitoso. Orden = ${response.response.id}`);
 					const alert = this.alertCtrl.create({

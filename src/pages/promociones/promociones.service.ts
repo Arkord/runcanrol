@@ -15,7 +15,7 @@ export class PromocionesService {
 	}
 
 	all() {
-		let url = 'http://www.operhum.com/ords/runcanrol/api/promociones';
+		let url = 'http://www.operhum.com/ords/runcanrol/api/promociones/';
 		return this.http.get(url)
 			.map(response => this.result = response.json().items)
 	}
@@ -26,10 +26,11 @@ export class PromocionesService {
 			.map(response => this.resultSitios = response.json().items)
 	}
 
-	filter(sitio) {
+	filter(sitio) { 
 		let res;
+		console.log(sitio);
 		if(sitio !== "todos") {
-			res = this.result.filter(item => item.tipo === sitio)
+			res = this.result.filter(item => item.sitio_id === sitio)
 		}
 		else {
 			res = this.result;

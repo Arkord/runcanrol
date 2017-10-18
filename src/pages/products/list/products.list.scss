@@ -1,4 +1,14 @@
 ion-content {
+    .product-header {
+        background: transparent;
+    }
+    .card-content p.product,
+    .card-content img.product-img {
+        padding-left: 16px;
+    }
+    .card-content img.product-img {
+        width: 100%;
+    }
     .comprar {
         width: 130px;
         background: #ffb100;

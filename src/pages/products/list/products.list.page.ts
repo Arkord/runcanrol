@@ -53,11 +53,8 @@ export class ProductsListPage implements OnInit {
 
 	getImage(product_id) {
 		if(this.images.length >0) {
-			console.log("product_id", product_id);
-			console.log("all", this.images);
-			console.log("filter", this.images.filter(item => item.id = product_id));
 			let result = this.images.filter(item => item.id = product_id)[0].data[0].ruta;
-			return "http://" + result;
+			return result;
 		}
 		else {
 			return "";

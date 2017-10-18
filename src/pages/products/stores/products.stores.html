@@ -12,7 +12,10 @@
         <ion-row>
             <ion-col col-12 *ngFor="let store of stores">
                 <ion-card class="blue">
-                    <h2>{{store.nombre}}</h2>
+                    <ion-item class="product-header">
+                        <h2>{{store.nombre}}</h2>
+                        <hr>
+                    </ion-item>
                     <ion-card-content>
                         <div class="store-logo-placeholder">
                             <img class="store-logo" src="assets/img/store_placeholder.png" alt="">

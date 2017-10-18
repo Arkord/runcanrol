@@ -10,8 +10,8 @@ export class Config {
 	};
 
 	// Paypal
-	static payPalEnvironmentSandbox = 'ASqEI8-G97qAYU3vz3r9D8VKR0jzMTG2tXjdAJUPpGb-pu98SlXmdV67vLLOpKrpDwX279aBd1LeepLT';
-	static payPalEnvironmentProduction = '';
+	static payPalEnvironmentSandbox = '';
+	static payPalEnvironmentProduction = 'ASUPACLubs0akW_Gtzy6E3Eu1pJ1uj36en3TWK7XLHdEQrgZvkLtvh-0Il4PWjxPFjrCe2mudgdRoeJ6';
 
 	static stripePubKey = 'pk_test_Iw14HiEkQn2zxDLNEAGmfcHE';
 }
